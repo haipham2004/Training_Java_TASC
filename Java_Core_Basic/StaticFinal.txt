@@ -1,0 +1,21 @@
+Phạm Ngọc Hải
+- Thế nào là static ? Phương thức, thuộc tính khai báo bằng từ khóa static được sử dụng khi nào ? Làm thế nào để truy cập được tới phương thức, thuộc tính static
+- Thế nào là final ? Khai báo 1 biến final khác gì với static, biến khai báo bằng final có thể chỉnh sửa được không ? Nếu được cho ví dụ minh họa.
+Trả lời:
+- Thế nào là static ? Phương thức, thuộc tính khai báo bằng từ khóa static được sử dụng khi nào ? Làm thế nào để truy cập được tới phương thức, thuộc tính static
+Static là một từ khoá sử dụng để khai báo biến và phương thức của lớp. Khi một biến, phương thức được khai báo là static, nó thuộc về lớp, không thuộc về đối tượng.
+Phương thức static sử dụng khi: Dùng để khởi tạo chương trình mà không cần gọi đối tượng, khi không cần tạo đối instance của một lớp
+Thuộc tính static: Dùng để chia sẻ thông tin chung cho tất cả các thể hiện của lớp
+Truy cập trực tiếp bằng tên lớp. 
+
+- Thế nào là final ? Khai báo 1 biến final khác gì với static, biến khai báo bằng final có thể chỉnh sửa được không ? Nếu được cho ví dụ minh họa.
+
+Khi một thành phần được khai báo là final thì nó sẽ không thể thay đổi.
+Biến final không thể thay đổi giá trị sau khi khởi tạo, đối với biến static có thể thay đổi giá trị sau khi khởi tạo 
+Phương thức final thì không thể bị ghi đè bới lớp con
+Lớp final cũng không bị kế thừa
+VD: public final x=10; // Không thể gán lại giá trị, sẽ xảy ra lỗi biên dịch
+       public static y=20;// Gán lại được giá trị
+Ví dụ ở: Demo_JavaCore trên git ạ
+
+

@@ -1,0 +1,23 @@
+Phạm Ngọc Hải
+- Tìm hiểu về các đặc điểm và tính chất của String trong java
+- Có bao nhiêu cách để tạo 1 biến String
+- Tìm hiểu về String pool?
+- Làm sao để so sánh hai chuỗi trong java
+Trả lời: 
+Tìm hiểu về các đặc điểm và tính chất của String trong java
+ + Immutable: Đối tượng String trong Java là bất biến, khi một chuỗi đã được tạo ra, sẽ không thể thay đổi nội dung của nó. Mọi thay đổi sẽ tạo ra một đối tượng String mới.
++  Tính đồng nhất: Java sử dụng String pool để quản lý các đối tượng String. Điều này có nghĩa là nếu hai chuỗi có nội dung giống nhau, Java sẽ chỉ lưu một bản duy nhất trong bộ nhớ.
++  Được định nghĩa trong lớp String: String là một lớp trong Java, cung cấp nhiều phương thức hữu ích để xử lý chuỗi: length(), charAt(), substring(), indexOf(), trim()…
+Có bao nhiêu cách để tạo 1 biến String
+Sử dụng dấu nháy kép: String str1 = "Hello, World!";
+Sử dụng từ khóa new: String str2 = new String("Hello, World!");
+Sử dụng mảng kí tự
+Tìm hiểu về String pool?
+String pool là một vùng nhớ đặc biệt nằm trong vùng nhớ Heap (Heap memory), dùng để lưu trữ các biến được khai báo theo kiểu String.
+String pool giúp tối ưu hoá việc lưu trữ và sử dụng vùng nhớ khi khai báo biến String, giúp hạn chế tình trạng tràn bộ nhớ Java Heap Space.
+Làm sao để so sánh hai chuỗi trong java
+1.	Sử dụng phương thức equals()
+2.	Sử dụng toán tử ==
+3.	Sử dụng phương thức compareTo()
+
+
