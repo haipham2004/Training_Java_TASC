@@ -1,0 +1,55 @@
+Phạm Ngọc Hải
+1. Primitive and Object data type
+Mai Th�nh Vinh (FE PTCD HN)
+•
+Apr 16 (Edited Apr 16)
+100 points
+- Phân biệt kiểu dữ liệu nguyên thủy và kiểu dữ liệu object.
+- Có thể chuyển đổi giữa hai kiểu dữ liệu này không ?
+- Có thể so sánh hai kiểu dữ liệu này với nhau không?
+- Giá trị khi khởi tạo biến với hai loại kiểu dữ liệu này là gì?
+
+Yêu cầu đọc lý thuyết và làm demo
+Trả lời:
+Phân biệt kiểu dữ liệu nguyên thủy và kiểu dữ liệu object:
+-Kiểu dữ liệu nguyên thuỷ: int, float, double, long, short, boolean
+          +Không phải là đối tượng
++Kiểu dữ liệu nguyên thuỷ sẽ được lưu trực tiếp trong bộ nhớ
++Giá trị không được phép null
++Không có phương thức và thuộc tính
+-Kiểu dữ liệu đối tượng: String, Integer, Float, Double, Long, Boolean, ArrayList
+           +Chứa tham chiếu đến một đối tượng
+            +Không lưu trữ giá trị trực tiếp
+            +Giá trị có thể null
+             +Có thể có phương thức và thuộc tính
+Có thể chuyển đổi giữa hai kiểu dữ liệu này không ?
+Có thể chuyển đổi giữa 2 kiểu dữ liệu này thông qua lớp Wrapper
+VD: Chuyển đổi int ->Integer
+ int a=15;
+Integer b=Integer.valueof(a);
+VD: Integer -> int
+Integer a = 30;
+ int b = a.intValue();
+Có thể so sánh hai kiểu dữ liệu này với nhau không?
+So sánh kiểu dữ liệu nguyên thủy:
+•	Có thể so sánh trực tiếp bằng các toán tử so sánh: ==, !=, >, <.
+So sánh kiểu dữ liệu đối tượng:
+•	Để so sánh hai đối tượng, thường sử dụng phương thức equals
+Giá trị khi khởi tạo biến với hai loại kiểu dữ liệu này là gì?
+Kiểu dữ liệu nguyên thủy:
+•	Giá trị mặc định là:
+int: 0
+char: '\u0000' (ký tự null)
+boolean: false
+byte: 0
+short: 0
+long: 0L
+float: 0.0f
+double: 0.0d
+Kiểu dữ liệu đối tượng:
+•	Giá trị mặc định là null nếu không được khởi tạo.
+
+
+
+
+ 
