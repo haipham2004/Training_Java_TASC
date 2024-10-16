@@ -1,0 +1,49 @@
+Phạm Ngọc Hải
+- Phân biệt throw và throws
+- Thế nào là checked và unchecked exception
+- try catch , try with resource khác nhau như thế nào ?
+- Làm thế nào để tạo được 1 custom exception ?
+
+Trả lời: 
+Phân biệt throw và throws
+
+  Throw:
+Triển khai trong thân hàm.
+Được dùng để ném một ngoại lệ cụ thể (instance).
+Phải đi kèm với một đối tượng của ngoại lệ đã được xác định.
+Nếu ném một checked exception, cần phải khai báo throws trong định nghĩa hàm.
+ Throws:
+
+     Xuất hiện trong khai báo hàm.
+Thông báo cho người dùng rằng phương thức này có thể ném một hoặc nhiều ngoại lệ.
+Dùng để xử lý checked exception mà không cần ném trực tiếp trong thân hàm.
+
+Thế nào là checked và unchecked exception
+
+  Checked Exception:
+Là những ngoại lệ mà trình biên dịch yêu cầu phải xử lý.
+Phải được xử lý bằng cách sử dụng try-catch hoặc phải được khai báo bằng throws.
+Ví dụ: IOException, SQLException.
+
+  Unchecked Exception:
+Là những ngoại lệ không yêu cầu phải được khai báo hay xử lý.
+Thường là các lỗi lập trình như NullPointerException, ArrayIndexOutOfBoundsException.
+Chúng xuất hiện tại thời điểm thực thi (runtime).
+
+try catch , try with resource khác nhau như thế nào ?
+
+ Try-catch:
+Được sử dụng để xử lý ngoại lệ.
+Nếu có ngoại lệ xảy ra trong khối try, nó sẽ được bắt và xử lý trong khối catch.
+ Try-with-resources:
+Tự động quản lý tài nguyên (như stream, connection...) bằng cách đóng chúng khi không còn sử dụng.
+Tài nguyên phải implement AutoCloseable hoặc Closeable.
+Giúp ngăn ngừa rò rỉ tài nguyên mà không cần phải viết mã đóng tài nguyên thủ công.
+
+Làm thế nào để tạo được 1 custom exception ?
+Để tạo một custom exception:
+Tạo một lớp mới kế thừa từ Exception.
+Có thể thêm các constructor tùy chỉnh để truyền thông tin bổ sung, ví dụ như thông điệp lỗi hoặc nguyên nhân.
+
+Phần Demo em có để ở git ạ.
+
