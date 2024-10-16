@@ -1,0 +1,46 @@
+Cấp phát tĩnh 
+Định nghĩa:Cấp phát tĩnh là quá trình phân bổ bộ nhớ cho các biến trong thời gian biên dịch (compile time). Kích thước và loại của biến phải được xác định trước khi chương trình chạy.
+Đặc điểm:
+Thời gian tồn tại: Biến tồn tại trong suốt thời gian chương trình chạy.
+Tốc độ: Nhanh, vì không cần tìm bộ nhớ tại thời điểm chạy.
+Kích thước cố định: Không thể thay đổi kích thước của biến sau khi đã được cấp phát.
+
+Cấp phát động 
+Định nghĩa: Cấp phát động là quá trình phân bổ bộ nhớ cho các biến trong thời gian chạy (runtime). Kích thước và loại của biến có thể được xác định trong khi chương trình đang chạy.
+Đặc điểm:
+Thời gian tồn tại: Biến chỉ tồn tại cho đến khi nó bị giải phóng 
+Tốc độ: Chậm hơn so với cấp phát tĩnh do cần tìm kiếm và quản lý bộ nhớ.
+Kích thước linh hoạt: Có thể thay đổi kích thước trong quá trình chạy, giúp tiết kiệm bộ nhớ và tối ưu hóa hiệu suất.
+
+-->Cấp phát tĩnh:
+Xảy ra trong thời gian biên dịch.
+Biến tồn tại suốt chương trình.
+Tốc độ nhanh, nhưng kích thước cố định.
+
+-->Cấp phát động:
+Xảy ra trong thời gian chạy.
+Biến chỉ tồn tại khi còn tham chiếu.
+Tốc độ chậm hơn, nhưng kích thước linh hoạt.
+
+
+Phân biệt Stack và heap
+
+Stack:
+Chức năng: Stack được sử dụng để lưu trữ các biến cục bộ và thông tin gọi hàm  như phương thức đang thực thi và tham số của chúng.
+Phạm vi: Biến cục bộ tồn tại trong stack và được giải phóng ngay khi phương thức kết thúc.
+Tốc độ: Nhanh do cơ chế (LIFO) (Last in First Out)
+Quản lý: Bộ nhớ stack được quản lý tự động, không cần dọn dẹp bởi lập trình viên
+
+Heap:
+Chức năng: Heap là nơi lưu trữ các đối tượng và dữ liệu được khởi tạo bằng từ khoá new. Đây là bộ nhớ động.
+Phạm vị: Đối tượng có thể được truy cập từ bất kỳ hàm nào và tồn tại cho đến khi không còn tham chiếu đến chúng
+Tốc độ: Chậm hơn stack do cơ chế quản lý phức tạp và cần Grabage Collection
+Quản lý: Heap được quản lý bởi Grabage Collector, giúp tự động thu hồi bộ nhớ của các đối tượng không còn được sử dụng
+
+-->	Stack lưu trữ các biến cục bộ và lời gọi hàm, hoạt động nhanh có phạm vi ngắn.
+-->	Heap lưu trữ các đối tượng dộng, cần Garbage Collection để quản lý và có phạm vi dài hơn
+
+Phần Demo em có để ở git ạ
+
+
+
