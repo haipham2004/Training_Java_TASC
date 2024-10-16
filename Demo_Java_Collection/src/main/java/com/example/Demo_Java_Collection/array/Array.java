@@ -1,13 +1,12 @@
-package array;
+package com.example.Demo_Java_Collection.array;
 
 public class Array {
-
     int[] arr; // Khai báo mảng số nguyên
     String[] strArr; // Khai báo mảng chuỗi
 
-   static int[] arrs = new int[5]; // Khởi tạo mảng có 5 phần tử
+    static int[] arrs = new int[5]; // Khởi tạo mảng có 5 phần tử
 
-   static String[] name = {"Hai", "Hằng", "Khanh"}; // Khởi tạo mảng với giá trị
+    static String[] name = {"Hai", "Hằng", "Khanh"}; // Khởi tạo mảng với giá trị
 
     public static void main(String[] args) {
 
