@@ -21,29 +21,34 @@ Access modifier trong java có những loại nào ? Nêu đặc điểm của t
 +Private: Chỉ có thể truy cập bên trong chính lớp đó
 +Protected: Có thể truy cập các lớp bên trong gói, truy cập ngoài gói phải thông qua tính kế thừa
 +Default: Có thể truy cập các lớp bên trong gói
+
 Phân biệt class và instance
 
 Class: Mô tả hành vi và trạng thái của đối tượng. Không chiếm không gian bộ nhớ
 Instance: Là một đối tượng được tạo ra từ class. Chiếm không gian bộ nhớ
+
 Phân biệt Abstract và Interface , Nêu trường hợp sử dụng cụ thể. Nếu 2 interface hoặc 1 abstract và 1 interface có 1 function cùng tên, có thể cùng hoặc khác kiểu trả về cùng được kế thừa bởi một class, chuyện gì sẽ xảy ra?
 
 Abstract Class:
 Là một lớp không thể được khởi tạo.
-Có thể chứa cả phương thức trừu tượng (abstract method) và phương thức cụ thể (concrete method).
-Có thể có biến thành viên(private, public,protectd,default), getter, setter và constructor.
+Có thể chứa cả phương thức trừu tượng (abstract method) và phương thức cụ thể.
+Có thể chứa mọi loại biến final, non-final, static, non-static.
+Có constructor.
 Một lớp chỉ có thể kế thừa một abstract class.
 Sử dụng khi các lớp con có quan hệ chặt chẽ với nhau(đặc điểm hành vi), cùng sử dụng phương thức chung đã định nghĩa sẵn ở abstract class .
+
 Interface:
-Biến là hằng số (static final).
+Biến là hằng số (static, final).
 Không có constructor
 Một lớp có thể implements nhiều interface.
-Sử dụng khi bạn muốn định nghĩa một tập hợp các phương thức mà các lớp không liên quan có thể thực hiện.
+Sử dụng khi muốn định nghĩa một tập hợp các phương thức mà các lớp không liên quan có thể thực hiện.
 
 Nếu 2 interface hoặc 1 abstract và 1 interface có 1 function cùng tên: Vẫn có thể kế thừa trong cùng một lớp
 +Cùng tên, kiểu trả về: Không vấn đề:
 +Cùng tên, khác kiểu trả về: Lỗi biên dịch
 
 Thế nào là Overriding và Overloading
+
 Overriding:
 Định nghĩa lại một phương thức trong lớp con mà đã được định nghĩa trong lớp cha.
 Được sử dụng khi muốn thay đổi hành vi của phương thức trong lớp cha.
