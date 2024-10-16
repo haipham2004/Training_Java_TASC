@@ -1,0 +1,17 @@
+Phạm Ngọc Hải
+
+- Nêu hiểu biết về kiểu mảng trong java
+- Dùng kiểu mảng mang lại ưu , nhược điểm gì?
+Trả lời: 
+
+Nêu hiểu biết về kiểu mảng trong java
+
+Mảng (Array) cho phép lưu trữ nhiều phần tử cùng loại trong một biến duy nhất.
+Mảng có thể chứa các kiểu dữ liệu nguyên thủy (như int, char, double,...) hoặc các kiểu đối tượng.
+Mảng: Không có các phương thức như add(), remove(), size(), ta phải tự cấu hình các phương thức cho mảng.
+
+Dùng kiểu mảng mang lại ưu , nhược điểm gì?
+
+Ưu điểm: Tiết kiệm bộ nhớ, truy cập nhanh thông quan chỉ số
+Nhược điểm: Kích thước cố định(sau khi khởi tạo không thể thay đổi), chỉ lưu trữ cùng loại dữ liệu
+Phần Demo em có để ở git ạ.
