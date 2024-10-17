@@ -1,0 +1,47 @@
+Phạm Ngọc Hải
+- Nêu ra các đặc điểm List Interface
+- Kể ra các class triển khai từ List Interface
+- Phân biệt rõ trường hợp sử dụng của từng class đó
+
+Trả lời:
+Nêu ra các đặc điểm List Interface
+List Interface trong Java kế thừa Collection và nó cung cấp các phương thức để thao tác với các phần tử trong danh sách.
+
+ List lưu trữ các phần tử theo thứ tự mà chúng được thêm vào.
+ List cho phép lưu nhiều phần tử giống nhau.
+ Có thể truy cập các phần tử trong List bằng chỉ số (index).
+ List có thể thay đổi kích thước động, cho phép thêm hoặc xóa phần tử.
+
+Các lớp triển khai từ List Interface: ArrayList,  LinkedList, Vector, Stack (Stack là một phần mở rộng của Vector)
+
+Phân biệt trường hợp sử dụng của từng class
+
+ArrayList:
+Khi sử dụng: Khi cần truy cập nhanh vào các phần tử và số lượng phần tử không thay đổi nhiều.
+Ưu điểm: Tốt cho các thao tác tìm kiếm và duyệt danh sách.
+Nhược điểm: Thêm và xóa phần tử chậm hơn do cần dịch chuyển phần tử
+
+LinkedList:
+Khi sử dụng: Khi cần thực hiện nhiều thao tác thêm, xóa và không quan tâm đến việc truy cập ngẫu nhiên..
+Ưu điểm: Thêm, xóa, truy  phần tử nhanh hơn khi đã có vị trí (khi làm việc với đầu hoặc cuối danh sách).
+Nhược điểm: Truy cập ngẫu nhiên chậm hơn, tiêu tốn nhiều bộ nhớ hơn do cần lưu trữ địa chỉ của phần tử trước đó.
+
+Vector:
+Khi sử dụng: Khi cần một danh sách đồng bộ (thread-safe) cho nhiều luồng truy cập.
+Ưu điểm: Tự động mở rộng kích thước khi cần và an toàn cho đa luồng.
+Nhược điểm: Hiệu suất chậm hơn so với ArrayList do đồng bộ hóa.
+
+Stack:
+Khi sử dụng: Khi cần thực hiện các thao tác LIFO (Last In First Out).
+Ưu điểm: Cung cấp các phương thức chuyên dụng như push, pop, và peek.
+Nhược điểm:
+  Không thể truy cập các phần tử ở vị trí bất kỳ: Do Stack chỉ cho phép thêm và xóa các           phần tử ở đầu Stack, việc truy cập hoặc sửa đổi các phần tử ở vị trí bất kỳ là không thể.
+
+
+ ->ArrayList: Tốt cho truy cập nhanh và duyệt danh sách.
+-> LinkedList: Tốt cho thêm/xóa phần tử thường xuyên.
+-> Vector: Tốt cho đa luồng nhưng chậm hơn.
+ -> Stack: Tốt cho các trường hợp LIFO.
+
+
+Phần demo em có để ở git ạ
