@@ -1,0 +1,32 @@
+Phạm Ngọc Hải
+- Nêu các đặc điểm của Queue Interface, Dequeue Interface 
+
+- Kể ra các class triển khai từ Queue Interface, Dequeue Interface , phân biệt trường hợp sử dụng tương ứng
+
+
+Trả lời:
+
+Queue Interface trong Java là một cấu trúc dữ liệu theo nguyên tắc FIFO (First-In-First-Out), có nghĩa là phần tử được thêm vào đầu tiên sẽ được loại bỏ đầu tiên.
+ Một số đặc điểm chính của Queue bao gồm:
+•	Thêm phần tử: sử dụng phương thức add() hoặc offer().
+•	Loại bỏ phần tử: sử dụng remove() hoặc poll().
+•	Kiểm tra phần tử đầu tiên: sử dụng element() hoặc peek().
+Deque Interface (Double-Ended Queue) là một phiên bản mở rộng của Queue, cho phép thêm và loại bỏ phần tử từ cả hai đầu.
+ Một số đặc điểm chính của Deque bao gồm:
+•	Thêm phần tử: có thể thêm vào đầu hoặc cuối bằng addFirst(), addLast(), offerFirst(), offerLast().
+•	Loại bỏ phần tử: có thể loại bỏ từ đầu hoặc cuối bằng removeFirst(), removeLast(), pollFirst(), pollLast().
+•	Kiểm tra phần tử: có thể kiểm tra phần tử ở đầu hoặc cuối bằng getFirst(), getLast(), peekFirst(), peekLast().
+Bạn
+- Kể ra các class triển khai từ Queue Interface, Dequeue Interface , phân biệt trường hợp sử dụng tương ứng
+Copilot
+Queue Interface
+Các class triển khai từ Queue Interface bao gồm:
+•	LinkedList: Thích hợp cho các thao tác thêm và xóa phần tử ở bất kỳ vị trí nào vì LinkedList sử dụng các nút liên kết đôi.
+•	PriorityQueue: Dùng để lưu trữ các phần tử theo thứ tự ưu tiên, rất hữu ích trong các thuật toán như Dijkstra.
+•	ArrayBlockingQueue: Dùng trong các tình huống cần một hàng đợi có giới hạn kích thước, ví dụ trong các hệ thống sản xuất-tiêu thụ (Producer-Consumer).
+Deque Interface
+Các class triển khai từ Deque Interface bao gồm:
+•	LinkedList: Cũng triển khai Deque, thích hợp cho các thao tác hàng đợi hai đầu.
+•	ArrayDeque: Cung cấp hiệu suất cao hơn LinkedList trong nhiều trường hợp sử dụng, ví dụ như làm stack hoặc queue.
+Dùng Queue khi bạn cần một cấu trúc dữ liệu theo FIFO; dùng Deque khi bạn cần thao tác với cả hai đầu của hàng đợi.
+
