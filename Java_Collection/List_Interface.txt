@@ -5,14 +5,15 @@ Phạm Ngọc Hải
 
 Trả lời:
 Nêu ra các đặc điểm List Interface
-List Interface trong Java kế thừa Collection và nó cung cấp các phương thức để thao tác với các phần tử trong danh sách.
+List Interface trong Java cung cấp một cách để lưu trữ một nhóm các đối tượng, cho phép truy cập, thêm, xóa và cập nhật các phần tử theo chỉ số (index).
+Một số đặc điểm chính:
 
  List lưu trữ các phần tử theo thứ tự mà chúng được thêm vào.
- List cho phép lưu nhiều phần tử giống nhau.
+ List cho phép lưu trữ phần tử trùng lặp.
  Có thể truy cập các phần tử trong List bằng chỉ số (index).
  List có thể thay đổi kích thước động, cho phép thêm hoặc xóa phần tử.
 
-Các lớp triển khai từ List Interface: ArrayList,  LinkedList, Vector, Stack (Stack là một phần mở rộng của Vector)
+Các lớp triển khai từ List Interface: ArrayList,  LinkedList, Vector, Stack 
 
 Phân biệt trường hợp sử dụng của từng class
 
@@ -24,18 +25,19 @@ Nhược điểm: Thêm và xóa phần tử chậm hơn do cần dịch chuyể
 LinkedList:
 Khi sử dụng: Khi cần thực hiện nhiều thao tác thêm, xóa và không quan tâm đến việc truy cập ngẫu nhiên..
 Ưu điểm: Thêm, xóa, truy  phần tử nhanh hơn khi đã có vị trí (khi làm việc với đầu hoặc cuối danh sách).
-Nhược điểm: Truy cập ngẫu nhiên chậm hơn, tiêu tốn nhiều bộ nhớ hơn do cần lưu trữ địa chỉ của phần tử trước đó.
+Nhược điểm: Truy cập phần tử theo chỉ số chậm hơn do cần duyệt qua danh sách.
 
 Vector:
-Khi sử dụng: Khi cần một danh sách đồng bộ (thread-safe) cho nhiều luồng truy cập.
-Ưu điểm: Tự động mở rộng kích thước khi cần và an toàn cho đa luồng.
-Nhược điểm: Hiệu suất chậm hơn so với ArrayList do đồng bộ hóa.
+Khi sử dụng: Khi cần một danh sách an toàn trong môi trường đa luồng và không quan trọng hiệu suất.
+Ưu điểm: Đồng bộ hóa, an toàn trong đa luồng.
+Nhược điểm: Hiệu suất thấp hơn ArrayList do đồng bộ hóa.
 
 Stack:
 Khi sử dụng: Khi cần thực hiện các thao tác LIFO (Last In First Out).
 Ưu điểm: Cung cấp các phương thức chuyên dụng như push, pop, và peek.
 Nhược điểm:
-  Không thể truy cập các phần tử ở vị trí bất kỳ: Do Stack chỉ cho phép thêm và xóa các           phần tử ở đầu Stack, việc truy cập hoặc sửa đổi các phần tử ở vị trí bất kỳ là không thể.
+Không thể truy cập các phần tử ở vị trí bất kỳ một cách hiệu quả.
+Chủ yếu được sử dụng cho các thao tác ở đầu Stack.
 
 
  ->ArrayList: Tốt cho truy cập nhanh và duyệt danh sách.
