@@ -1,0 +1,44 @@
+Phạm Ngọc Hải
+
+- Nêu ra các đặc điểm Map Interface
+- Kể ra các class triển khai từ Map Interface
+- Phân biệt rõ trường hợp sử dụng của từng class đó
+Trả lời: 
+Nêu ra các đặc điểm Map Interface
+
+  Lưu trữ cặp khóa-giá trị: Map lưu trữ dữ liệu dưới dạng cặp khóa-giá trị, trong đó mỗi khóa là duy nhất và ánh xạ đến một giá trị.
+  Không có phần tử trùng lặp theo khóa: Mỗi khóa trong Map phải là duy nhất; nếu thêm một khóa đã tồn tại, giá trị của khóa đó sẽ được cập nhật.
+  Không có thứ tự: Map không đảm bảo thứ tự của các cặp khóa-giá trị
+  Truy cập value theo key: Có thể truy cập nhanh chóng value tương ứng với key.
+
+Kể ra các class triển khai từ Map Interface: HashMap , LinkedHashMap, TreeMap 
+
+Phân biệt rõ trường hợp sử dụng của từng class đó
+
+HashMap:
+
+Khi nào dùng: Khi cần hiệu suất cao và không yêu cầu thứ tự của các phần tử.
+
+Ưu điểm: Truy xuất nhanh chóng.
+
+Nhược điểm: Không duy trì thứ tự chèn các phần tử.
+
+LinkedHashMap:
+
+Khi nào dùng: Khi cần duy trì thứ tự chèn hoặc thứ tự truy cập của các phần tử.
+
+Ưu điểm: Duy trì thứ tự.
+
+Nhược điểm: Tốn bộ nhớ hơn HashMap do cần lưu trữ thông tin về thứ tự.
+
+TreeMap:
+
+Khi nào dùng: Khi cần duyệt qua các phần tử theo thứ tự tự nhiên hoặc một thứ tự tùy chỉnh.
+
+Ưu điểm: Sắp xếp các phần tử theo thứ tự tự nhiên hoặc Comparator.
+
+Nhược điểm: Hiệu suất thấp hơn HashMap và LinkedHashMap do cần duy trì cấu trúc cây đỏ-đen.
+
+Phần demo em để ở git ạ
+
+

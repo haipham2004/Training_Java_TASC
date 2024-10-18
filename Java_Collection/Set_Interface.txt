@@ -1,0 +1,37 @@
+Phạm Ngọc Hải
+- Nêu ra các đặc điểm Set Interface
+- Kể ra các class triển khai từ Set Interface
+- Phân biệt rõ trường hợp sử dụng của từng class đó
+Trả lời: 
+Nêu ra các đặc điểm Set Interface
+Không có phần tử trùng lặp
+Không có thứ tự
+Hiệu suất cao khi kiểm tra sự tồn tại
+Kể ra các class triển khai từ Set Interface: HashSet, TreeSet, LinkedHashSet
+
+Phân biệt rõ trường hợp sử dụng của từng class đó
+HashSet:
+
+Khi nào dùng: Khi cần hiệu suất cao và không quan tâm đến thứ tự của các phần tử.
+
+Ưu điểm: Truy xuất nhanh chóng.
+
+Nhược điểm: Không duy trì thứ tự các phần tử.
+
+LinkedHashSet:
+
+Khi nào dùng: Khi cần duy trì thứ tự chèn của các phần tử.
+
+Ưu điểm: Duy trì thứ tự chèn, có thể hữu ích trong các ứng dụng cần duyệt phần tử theo thứ tự chèn vào.
+
+Nhược điểm: Tốn bộ nhớ hơn HashSet do cần lưu trữ thông tin về thứ tự.
+
+TreeSet:
+
+Khi nào dùng: Khi cần duyệt qua các phần tử theo thứ tự tự nhiên hoặc một thứ tự tùy chỉnh.
+
+Ưu điểm: Sắp xếp các phần tử theo thứ tự tự nhiên hoặc Comparator.
+
+Nhược điểm: Hiệu suất thấp hơn HashSet và LinkedHashSet do cần duy trì cấu trúc cây đỏ-đen.
+
+Phần Demo em có để ở git ạ.

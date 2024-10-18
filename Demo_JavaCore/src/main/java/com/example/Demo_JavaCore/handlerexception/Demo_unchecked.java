@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Demo_unchecked {
 
-    public static void checkAge(int age) throws Exception {
+    public static void checkAge(int age)  {
         if (age < 0 || age > 100) {
-            throw new Exception("Tuổi không hợp lệ. Vui lòng nhập tuổi từ 0 đến 120.");
+            throw new IllegalArgumentException("Tuổi không hợp lệ. Vui lòng nhập tuổi từ 0 đến 120.");
         }
     }
 
