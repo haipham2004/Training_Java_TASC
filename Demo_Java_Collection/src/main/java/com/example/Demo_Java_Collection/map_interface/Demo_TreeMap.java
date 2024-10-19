@@ -11,8 +11,12 @@ public class Demo_TreeMap {
         treeMap.put("B", 2);
         treeMap.put("A", 1);
         treeMap.put("C", 3);
+        treeMap.put("D",null); // có thể chứa value null
 
-        // In các phần tử theo thứ tự tự nhiên
+        //Thêm phần tử trùng khoá -> Cập nhật giá trị cho khóa "A"
+        treeMap.put("A", 4);
+
+        // In các phần tử theo thứ tự tự nhiên: Nó săó xêó theo thứ tự chỉ định
         System.out.println("TreeMap: " + treeMap);
     }
 }

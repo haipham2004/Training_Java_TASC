@@ -11,8 +11,12 @@ public class Demo_LinkedHashMap {
         linkedHashMap.put("A", 1);
         linkedHashMap.put("B", 2);
         linkedHashMap.put("C", 3);
+        linkedHashMap.put("D",null); // có thể chứa value null
 
-        // In các phần tử
+        //Thêm phần tử trùng khoá -> Cập nhật giá trị cho khóa "A"
+        linkedHashMap.put("A", 4);
+
+        // In các phần tử: Nó giống HashMap nhưng sẽ duy trì thứ tự thêm vào
         System.out.println("LinkedHashMap: " + linkedHashMap);
     }
 }
