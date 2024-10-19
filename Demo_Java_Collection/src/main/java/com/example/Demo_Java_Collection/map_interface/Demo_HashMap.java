@@ -10,8 +10,9 @@ public class Demo_HashMap {
         hashMap.put("A", 1);
         hashMap.put("B", 2);
         hashMap.put("C", 3);
+        hashMap.put("D",null); // có thể chứa value null
 
-        // Cập nhật giá trị cho khóa "A"
+        //Thêm phần tử trùng khoá -> Cập nhật giá trị cho khóa "A"
         hashMap.put("A", 4);
 
         // In các phần tử
