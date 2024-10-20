@@ -1,14 +1,15 @@
 package main;
 
 import model.Customer;
-import service.CustomerManager;
+import service.CustomerService;
 
 import java.util.Scanner;
 
 public class CustomerMain {
 
+
     public static void main(String[] args) {
-        CustomerManager customerManager = new CustomerManager();
+        CustomerService customerManager = new CustomerService();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -61,13 +62,13 @@ public class CustomerMain {
 
                     System.out.println("Bạn muốn sửa thông tin gì? (Để trống nếu không muốn thay đổi)");
 
-                    System.out.print("Nhập tên mới (để trống nếu không thay đổi): ");
+                    System.out.print("Nhập tên mới (để trống name nếu không thay đổi): ");
                     String newName = scanner.nextLine();
 
-                    System.out.print("Nhập email mới (để trống nếu không thay đổi): ");
+                    System.out.print("Nhập email mới (để trống email nếu không thay đổi): ");
                     String newEmail = scanner.nextLine();
 
-                    System.out.print("Nhập số điện thoại mới (để trống nếu không thay đổi): ");
+                    System.out.print("Nhập số điện thoại mới (để trống số điện thoại nếu không thay đổi): ");
                     String newPhoneNumber = scanner.nextLine();
 
                     customerManager.editCustomer(phoneToEdit, newName, newEmail, newPhoneNumber);
