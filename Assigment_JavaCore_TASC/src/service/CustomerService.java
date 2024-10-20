@@ -10,11 +10,13 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerManager {
+public class CustomerService {
+
     private List<Customer> customers;
+
     private static final String FILE_NAME = "customers.txt";
 
-    public CustomerManager() {
+    public CustomerService() {
         customers = new ArrayList<>();
         loadCustomers();
     }
