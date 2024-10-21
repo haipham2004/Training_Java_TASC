@@ -9,6 +9,7 @@ public class Demo_HashSet {
         hashSet.add("Hằng");
         hashSet.add("Khanh");
         hashSet.add("Hải"); // Không thêm vì đã tồn tại
+        hashSet.add(null); // Có thể chèn giá trị null
         System.out.println("HashSet: " + hashSet); // Thứ tự không được sắp xếp đúng
     }
 }

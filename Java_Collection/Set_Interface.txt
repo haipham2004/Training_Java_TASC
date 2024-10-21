@@ -34,4 +34,13 @@ Khi nào dùng: Khi cần duyệt qua các phần tử theo thứ tự tự nhi�
 
 Nhược điểm: Hiệu suất thấp hơn HashSet và LinkedHashSet do cần duy trì cấu trúc cây đỏ-đen.
 
+EnumSet:
+
+Khi nào dùng: Khi làm việc với các giá trị enum, cung cấp hiệu suất tốt hơn so với các triển khai khác.
+Ưu điểm: Nhanh và hiệu quả cho các enum.
+Nhược điểm: Chỉ có thể sử dụng cho enum.
+
+
+
+
 Phần Demo em có để ở git ạ.

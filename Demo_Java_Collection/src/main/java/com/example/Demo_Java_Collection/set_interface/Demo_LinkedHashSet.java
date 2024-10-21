@@ -11,6 +11,7 @@ public class Demo_LinkedHashSet {
         linkedHashSet.add("Hằng");
         linkedHashSet.add("Khanh");
         linkedHashSet.add("Hải"); // Không thêm vì đã tồn tại
+        linkedHashSet.add(null); // Có thể chèn giá trị null
         System.out.println("LinkedHashSet: " + linkedHashSet); // Thứ tự không được sắp xếp đúng theo thứ tự thênm vào
     }
 }

@@ -9,7 +9,7 @@ List Interface trong Java cung cấp một cách để lưu trữ một nhóm c�
 Một số đặc điểm chính:
 
  List lưu trữ các phần tử theo thứ tự mà chúng được thêm vào.
- List cho phép lưu trữ phần tử trùng lặp.
+ List cho phép lưu trữ phần tử trùng lặp, có thể null.
  Có thể truy cập các phần tử trong List bằng chỉ số (index).
  List có thể thay đổi kích thước động, cho phép thêm hoặc xóa phần tử.
 
@@ -23,7 +23,7 @@ Khi sử dụng: Khi cần truy cập nhanh vào các phần tử và số lư�
 Nhược điểm: Thêm và xóa phần tử chậm hơn do cần dịch chuyển phần tử
 
 LinkedList:
-Khi sử dụng: Khi cần thực hiện nhiều thao tác thêm, xóa và không quan tâm đến việc truy cập ngẫu nhiên..
+Khi sử dụng: Khi cần thực hiện nhiều thao tác thêm (nó chỉ quan tâm đến phần tử trước và sau nó), xóa và không quan tâm đến việc truy cập ngẫu nhiên..
 Ưu điểm: Thêm, xóa, truy  phần tử nhanh hơn khi đã có vị trí (khi làm việc với đầu hoặc cuối danh sách).
 Nhược điểm: Truy cập phần tử theo chỉ số chậm hơn do cần duyệt qua danh sách.
 
@@ -32,18 +32,12 @@ Khi sử dụng: Khi cần một danh sách an toàn trong môi trường đa lu
 Ưu điểm: Đồng bộ hóa, an toàn trong đa luồng.
 Nhược điểm: Hiệu suất thấp hơn ArrayList do đồng bộ hóa.
 
-Stack:
-Khi sử dụng: Khi cần thực hiện các thao tác LIFO (Last In First Out).
-Ưu điểm: Cung cấp các phương thức chuyên dụng như push, pop, và peek.
-Nhược điểm:
-Không thể truy cập các phần tử ở vị trí bất kỳ một cách hiệu quả.
-Chủ yếu được sử dụng cho các thao tác ở đầu Stack.
 
 
  ->ArrayList: Tốt cho truy cập nhanh và duyệt danh sách.
 -> LinkedList: Tốt cho thêm/xóa phần tử thường xuyên.
 -> Vector: Tốt cho đa luồng nhưng chậm hơn.
- -> Stack: Tốt cho các trường hợp LIFO.
+
 
 
 Phần demo em có để ở git ạ
