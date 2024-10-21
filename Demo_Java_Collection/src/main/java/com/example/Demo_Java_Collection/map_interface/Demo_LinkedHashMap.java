@@ -1,6 +1,7 @@
 package com.example.Demo_Java_Collection.map_interface;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Demo_LinkedHashMap {
 
@@ -16,7 +17,24 @@ public class Demo_LinkedHashMap {
         //Thêm phần tử trùng khoá -> Cập nhật giá trị cho khóa "A"
         linkedHashMap.put("A", 4);
 
+        //Có thể chứa 1 khoá null
+        linkedHashMap.put(null,100);
+
         // In các phần tử: Nó giống HashMap nhưng sẽ duy trì thứ tự thêm vào
-        System.out.println("LinkedHashMap: " + linkedHashMap);
+        for (String key : linkedHashMap.keySet()) {
+            Integer value = linkedHashMap.get(key);
+            System.out.println("Key: " + key + ", Value: " + value);
+        }
+
+        System.out.println("Get: "+linkedHashMap.get("C"));
+
+        System.out.println("Remove: "+linkedHashMap.remove("C"));
+
+        for (Map.Entry<String, Integer> entry : linkedHashMap.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println("Key sau: " + key + ", Value sau: " + value);
+        }
+
     }
 }

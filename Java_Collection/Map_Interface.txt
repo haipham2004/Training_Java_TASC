@@ -33,11 +33,24 @@ Nhược điểm: Tốn bộ nhớ hơn HashMap do cần lưu trữ thông tin v
 
 TreeMap:
 
-Khi nào dùng: Khi cần duyệt qua các phần tử theo thứ tự tự nhiên hoặc một thứ tự tùy chỉnh.
+Khi nào dùng: Khi cần duyệt qua các phần tử theo thứ tự tự nhiên Comparator hoặc một thứ tự tùy chỉnh.
 
 Ưu điểm: Sắp xếp các phần tử theo thứ tự tự nhiên hoặc Comparator.
 
 Nhược điểm: Hiệu suất thấp hơn HashMap và LinkedHashMap do cần duy trì cấu trúc cây đỏ-đen.
+
+Hashtable:
+
+Khi nào dùng: Khi cần một cấu trúc dữ liệu đồng bộ (synchronized) cho các ứng dụng đa luồng.
+
+Ưu điểm:
+
+Được đồng bộ, do đó an toàn khi sử dụng trong môi trường đa luồng.
+Tương tự như HashMap về hiệu suất khi truy cập dữ liệu.
+Nhược điểm:
+
+Hiệu suất thấp hơn so với HashMap do việc đồng bộ hóa.
+Không cho phép khóa hoặc giá trị null.
 
 Phần demo em để ở git ạ
 
