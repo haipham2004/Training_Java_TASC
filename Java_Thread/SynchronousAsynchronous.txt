@@ -1,0 +1,59 @@
+Phạm Ngọc Hải
+
+- Phân biệt synchronous vs asynchronous
+- Phân biệt trường hợp sử dụng, ưu nhược điểm của async và sync
+- Tìm hiểu từ khóa : synchronized trong java
+
+Trả lời:  
+
+
+Phân biệt Synchronous và Asynchronous
+Synchronous (Đồng bộ):
+
+Định nghĩa: Trong mô hình đồng bộ, các tác vụ được thực hiện lần lượt. Tác vụ tiếp theo chỉ bắt đầu khi tác vụ trước đó đã hoàn thành.
+Ví dụ: Khi gọi một hàm và chờ nó trả kết quả trước khi tiếp tục thực hiện đoạn mã tiếp theo.
+Asynchronous (Bất đồng bộ):
+
+Định nghĩa: Trong mô hình bất đồng bộ, các tác vụ có thể được thực hiện song song. Bạn có thể bắt đầu một tác vụ mà không cần chờ đợi nó hoàn thành trước khi tiếp tục thực hiện các tác vụ khác.
+Ví dụ: Gửi một yêu cầu HTTP mà không cần chờ phản hồi ngay lập tức, cho phép thực hiện các công việc khác trong khi chờ.
+
+Trường hợp sử dụng, ưu nhược điểm
+Synchronous
+Trường hợp sử dụng:
+Khi cần thực hiện các tác vụ theo thứ tự, như xử lý dữ liệu tuần tự hoặc khi thứ tự thực hiện là quan trọng.
+Trong các ứng dụng đơn giản hoặc nhỏ, nơi không cần tối ưu hóa hiệu suất.
+
+Ưu điểm:
+
+Dễ hiểu và dễ triển khai.
+Dễ dàng theo dõi và gỡ lỗi.
+
+Nhược điểm:
+
+Có thể dẫn đến việc lãng phí thời gian chờ đợi.
+Kém hiệu quả trong các tác vụ vì hệ thống sẽ bị chặn trong khi chờ kết quả.
+
+Asynchronous
+
+Trường hợp sử dụng:
+
+Trong các ứng dụng web, nơi cần xử lý nhiều yêu cầu đồng thời.
+Khi thực hiện các tác vụ tốn thời gian như tải dữ liệu từ server.
+
+Ưu điểm:
+
+Tối ưu hóa hiệu suất và sử dụng tài nguyên tốt hơn.
+Cải thiện trải nghiệm người dùng khi ứng dụng không bị chậm lại trong khi chờ.
+
+Nhược điểm:
+
+Phức tạp hơn trong việc thiết kế và gỡ lỗi.
+Có thể dẫn đến các vấn đề đồng bộ.
+
+Từ khóa synchronized trong Java
+
+Từ khóa synchronized trong Java được sử dụng để điều chỉnh việc truy cập tới các tài nguyên chia sẻ trong môi trường đa luồng.
+Cách sử dụng: Đặt từ khóa synchronized trước một phương thức để đảm bảo rằng chỉ một luồng có thể truy cập vào phương thức đó tại một thời điểm.
+Tác dụng: Ngăn chặn các vấn đề liên quan đến đồng bộ hóa, như deadlock, race condition, và đảm bảo tính toàn vẹn của dữ liệu khi có nhiều luồng cùng truy cập.
+
+--> Phần demo em có để ở git ạ

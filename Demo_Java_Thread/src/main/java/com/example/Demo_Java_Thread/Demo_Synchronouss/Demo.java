@@ -1,34 +1,37 @@
 package com.example.Demo_Java_Thread.Demo_Synchronouss;
 
-public class Demo {
+public class Demo implements Runnable{
 
-    public static String hoatDong1(){
-        return "Đánh răng";
+    @Override
+    public void run(){
+      count();
     }
+// Đồng bộ
+    private synchronized void count(){
+        int i=1;
 
-    public static String hoatDong2(){
-        return "Mặc quần áo";
-    }
+        while (i<=100){
+            System.out.printf("%d ", i);
 
-    public static String hoatDong3(){
-        return "Đợi xe bus";
-    }
-
-    public static String hoatDong4(){
-        return "Lên xe bus";
-    }
-
-    public static String hoatDong5(){
-        return "Tới cty TASC";
+            if(i%10==0){
+                System.out.println();
+            }
+            i++;
+            try{
+               Thread.sleep(300);
+            }catch (InterruptedException interruptedException){
+             interruptedException.printStackTrace();
+            }
+        }
     }
 
     public static void main(String[] args) {
-        System.out.println("Xử lí từng hàng động, kết thúc hoạt động này mới chuyển sang hoạt động khác");
-        System.out.println("Hoạt động: " + hoatDong1());
-        System.out.println("Hoạt động: " + hoatDong2());
-        System.out.println("Hoạt động: " + hoatDong3());
-        System.out.println("Hoạt động: " + hoatDong4());
-        System.out.println("Hoạt động: " + hoatDong5());
-        System.out.println("Kết thúc chương trình");
+        Demo demo = new Demo();
+
+        Thread thread1 = new Thread(demo);
+        Thread thread2 = new Thread(demo);
+
+        thread1.start();
+        thread2.start();
     }
 }
