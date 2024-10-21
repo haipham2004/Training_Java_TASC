@@ -1,0 +1,75 @@
+Phạm Ngọc Hải:  
+
+- Trong một câu query, thứ tự thực hiện của các thành phần như thế nào?
+- Tìm hiểu và lấy ví dụ về :
++ Các loại JOIN
++ Sub query
++ CTE (Common Table Expression)
++ Ranking : ROW_NUMBER, RANK, DENSE_RANK
++ VIEW : Có thể CRUD trên VIEW được không ?
++ PROCEDURE : mục đích khi tạo ra 1 PROCEDURE là gì ? Làm thế nào để sử dụng PROCEDURE trong ứng dụng java.
+
+Trả lời: 
+-Thứ tự thực hiện của các thành phần trong câu query
+
+FROM
+ON
+JOIN
+WHERE
+GROUP BY
+WITH CUBE or WITH ROLLUP
+HAVING
+SELECT
+DISTINCT
+ORDER BY
+TOP
+
+
+- Tìm hiểu và lấy ví dụ về :
++ Các loại JOIN
++ Sub query
++ CTE (Common Table Expression)
++ Ranking : ROW_NUMBER, RANK, DENSE_RANK
++ VIEW : Có thể CRUD trên VIEW được không ?
++ PROCEDURE : mục đích khi tạo ra 1 PROCEDURE là gì ? Làm thế nào để sử dụng PROCEDURE trong ứng dụng
+
+INNER JOIN: Chỉ lấy các bản ghi có trong cả hai bảng.
+LEFT JOIN: Lấy tất cả bản ghi từ bảng bên trái và các bản ghi khớp từ bảng bên phải. Nếu không có khớp, sẽ trả về NULL.
+RIGHT JOIN: Ngược lại với LEFT JOIN, lấy tất cả bản ghi từ bảng bên phải và các bản ghi khớp từ bảng bên trái.
+FULL OUTER JOIN: Kết hợp cả LEFT và RIGHT JOIN.
+
+Subquery là truy vấn lồng trong một truy vấn khác. Nó có thể được sử dụng trong phần SELECT, FROM hoặc WHERE.
+
+Common Table Expression (CTEs) là một tính năng quan trọng trong SQL, cho phép người dùng đặt tên và sử dụng một bảng tạm thời trong phạm vi của một truy vấn cụ thể.
+ CTEs được sử dụng trong việc xử lý các câu truy vấn phức tạp, thường kết hợp với các câu lệnh SELECT, INSERT, UPDATE hoặc DELETE giúp tăng tính rõ ràng, dễ đọc hiểu và quản lý các đoạn mã SQL.
+
+ROW_NUMBER(): Trả về số thứ tự duy nhất cho mỗi hàng trong một tập kết quả.
+RANK(): Trả về thứ hạng của hàng trong một tập, cho phép các hàng có cùng giá trị có cùng thứ hạng, bỏ qua số xếp hạng tiếp theo khi giá trị giống nhau. .
+DENSE_RANK(): Số xếp hạng tăng liên tục khi giá trị giống nhau. Không bỏ qua số xếp hạng tiếp theo khi giá trị giống nhau. 
+
+
+VIEW:
+Trong cơ sở dữ liệu, một views là một bảng ảo được tạo từ một hoặc nhiều bảng thực sự trong cơ sở dữ liệu.
+Nó không chứa dữ liệu thực tế mà chỉ hiển thị dữ liệu từ các bảng gốc dưới dạng một bảng ảo.
+
+Views cho phép người dùng truy cập và thực hiện các thao tác dữ liệu mà không cần biết chi tiết về cấu trúc bên dưới hoặc cách dữ liệu được lưu trữ.
+Có thể thực hiện các thao tác CRUD (Create, Read, Update, Delete) trên VIEW, nhưng với một số điều kiện:
+READ: Thường xuyên sử dụng.
+CREATE: Có thể tạo VIEW từ một truy vấn.
+Update: Nếu view chỉ chứa các cột từ một bảng mà không sử dụng hàm tổng hợp (aggregate functions), không có GROUP BY, và không có các tính năng như DISTINCT hoặc JOIN phức tạp, thì thường có thể cập nhật được.
+
+
+
+PROCEDURE là một tập hợp các lệnh SQL mà có thể được gọi để thực hiện một tác vụ cụ thể. Mục đích là để:
+
+Tái sử dụng mã.
+Giảm thiểu độ phức tạp của các truy vấn SQL.
+Tăng hiệu suất.
+
+Sử dụng Stored Procedure trong ứng dụng Java
+
+Kết nối đến cơ sở dữ liệu: Sử dụng JDBC để kết nối đến cơ sở dữ liệu (Mysql).
+Gọi Stored Procedure: Sử dụng PreparedStatement để gọi stored procedure.
+
+Phần demo em có để ở github ạ.
+

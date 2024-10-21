@@ -1,0 +1,65 @@
+Phạm Ngọc Hải
+
+- Tìm hiểu về mục đích, cách thức triển khai, ưu điểm của:
++ Signleton
++ Factory method
+
+Trả lời:
+
+Creational pattern là nhóm các mẫu được sử dụng để giải quyết các vấn đề thường gặp đối với việc khởi tạo đối tượng.
+
+Singleton đảm bảo chỉ duy nhất một thể hiện mới (new instance) được tạo ra và nó sẽ cung cấp cho chúng ta một phương thức để truy cập đến thực thể đó.
+
+Mục đích:
+
+Singleton giải quyết các vấn đề như:
+
+Đảm bảo rằng một lớp chỉ có một đối tượng
+Có thể truy cập dễ dàng một thể hiện duy nhất của một lớp
+Một lớp kiểm soát sự hiện thân của nó
+Làm thế nào có thể hạn chế số lượng các thể hiện của một lớp
+
+Cách thức triển khai:
+Khai báo một constructor là private để ngăn chặn việc tạo instance mới từ bên ngoài.
+
+Tạo một trường tĩnh (static) của chính class đó để lưu trữ instance duy nhất.
+
+Cung cấp một phương thức tĩnh (static) để trả về instance duy nhất này.
+
+Ưu điểm:
+
+Kiểm soát được số lượng instance tạo ra.
+
+Tiết kiệm tài nguyên hệ thống.
+
+Dễ dàng quản lý trạng thái toàn cục.
+
+
+Factory Method Pattern
+Định nghĩa giao diện cho việc khởi tạo một đối tượng, nhưng để lớp con quyết định lớp nào sẽ được khởi tạo. Factory Method Factory Method giao việc khởi tạo một đối tượng cụ thể cho lớp con.
+
+Định nghĩa một hàm tạo ảo.
+
+Toán tử new không dùng trong trường hợp này.
+
+Mục đích:
+Factory Method Pattern cung cấp một phương thức để tạo ra các đối tượng mà không cần chỉ rõ chính xác class của đối tượng sẽ được tạo ra.
+Nó cho phép các class con quyết định loại đối tượng nào sẽ được tạo.
+
+Cách thức triển khai:
+Định nghĩa một interface hoặc abstract class cho các đối tượng sẽ được tạo.
+
+Tạo một hoặc nhiều class cụ thể triển khai interface hoặc mở rộng abstract class đó.
+
+Định nghĩa một phương thức factory để trả về một instance của interface hoặc abstract class.
+
+Ưu điểm:
+
+Cung cấp tính linh hoạt trong việc tạo đối tượng.
+
+Giảm sự phụ thuộc giữa các class.
+
+Dễ dàng mở rộng khi có các lớp cụ thể mới cần được tạo.
+
+Phần demo em có để ở git ạ.
+

@@ -1,0 +1,61 @@
+Phạm Ngọc Hải
+
+- Process là gì ?
+- Thread là gì ?
+- Có bao nhiêu cách để tạo 1 thread trong java ? Khác biệt giữa việc sử dụng cách cách đó gì ?
+- Thế nào là multi thread ? Sử dụng multi thread mang lại ưu nhược điểm gì ?
+- Làm thế nào để biết được 1 thread, multi thread đã hoàn thành hay chưa?
+- Có giới hạn việc tạo ra bao nhiêu thread trong 1 ứng dụng java hay không?
+
+Trả lời:
+
+1. Process là gì?
+Định nghĩa:
+Process (tiến trình) là một chương trình đang thực thi.
+Trong mỗi chương trình chứa nhiều Process  bên trong.
+Mỗi process có không gian bộ nhớ riêng, các tài nguyên hệ thống riêng và thông tin trạng thái.
+Process có thể bao gồm nhiều thread và được quản lý bởi hệ điều hành.
+2. Thread là gì?
+Định nghĩa: Thread (luồng) là một đơn vị thực thi trong một process.
+Một process có thể có nhiều thread, và tất cả chúng chia sẻ không gian bộ nhớ và tài nguyên của process đó. Thread giúp tăng hiệu suất của chương trình bằng cách thực hiện nhiều tác vụ đồng thời.
+
+3. Có bao nhiêu cách để tạo một thread trong Java? Khác biệt giữa các cách đó là gì?
+Trong Java, có hai cách chính để tạo một thread:
+
+Kế thừa từ lớp Thread:
+
+Tạo một class mới kế thừa từ Thread và override phương thức run().
+
+Implement Runnable interface:
+
+Tạo một class mới thực hiện Runnable interface và override phương thức run().
+
+Khác biệt:
+
+Khi kế thừa từ Thread, không thể kế thừa từ bất kỳ lớp nào khác (vì Java không hỗ trợ đa kế thừa).
+Khi thực hiện Runnable, có thể kế thừa từ một lớp khác và cũng dễ dàng chia sẻ đối tượng Runnable giữa nhiều thread.
+
+Thế nào là multi-thread?
+Định nghĩa: Multi-threading là khả năng thực hiện nhiều thread đồng thời trong cùng một process.
+Điều này cho phép chương trình thực hiện nhiều tác vụ cùng một lúc, tăng hiệu suất và giảm thời gian chờ.
+
+Ưu điểm:
+
+Tăng cường hiệu suất ứng dụng bằng cách tận dụng tối đa CPU.
+Cải thiện trải nghiệm người dùng trong ứng dụng. 
+Cho phép xử lý các tác vụ I/O mà không chặn luồng chính.
+Nhược điểm:
+
+Tăng độ phức tạp của lập trình, đặc biệt là trong việc quản lý đồng bộ và tránh deadlock.
+Có thể gây ra tình trạng race conditions nếu không được quản lý cẩn thận.
+
+Làm thế nào để biết được một thread, multi-thread đã hoàn thành hay chưa?
+
+Sử dụng phương thức isAlive() của class Thread để kiểm tra xem một thread có đang hoạt động hay không. 
+Sử dụng join() để chờ cho một thread hoàn thành trước khi tiếp tục thực hiện các tác vụ khác.
+
+Có giới hạn việc tạo ra bao nhiêu thread trong một ứng dụng Java hay không?
+
+Có, nhưng giới hạn này không cố định và phụ thuộc vào nhiều yếu tố như:
+Tài nguyên hệ thống (CPU, bộ nhớ, etc.).
+Giới hạn mà JVM (Java Virtual Machine) thiết lập.
