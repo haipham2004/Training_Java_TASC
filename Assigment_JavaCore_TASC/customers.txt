@@ -1,6 +1,2 @@
-Hằng,hangThuy35@gmail.com,0337737196
-Khanh,khanhnt35@gmail.com,0945348765
-Phạm Ngọc Hải,phamngochai3010yka@gmail.com,0334294889
-Phạm Thị Hoa,phamhoa35@gmail.com,0394563276
-Đào Minh Hoàng,honang34@gmail.com,0456743267
-Nguyễn Ngọc Hân,han89@gmail.com,0485765432
+Hải,phamngochai301yka@gmail.com,0334294889
+Hằng,hangntt25@gmail.com,0337737196

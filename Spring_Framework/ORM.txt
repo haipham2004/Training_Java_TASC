@@ -1,0 +1,64 @@
+Phạm Ngọc Hải
+
+- ORM là gì ? Sử dụng ORM mang lại lợi ích như thế nào cho ứng dụng. Cơ chế hoạt động của ORM như thế nào? So sánh performance của việc sử dụng ORM vs JDBC
+- Spring JPA có phải là 1 triển khai của ORM hay không ?
++ Tìm hiểu các loại quan hệ trong JPA : Many To One, One To Many, Many To Many
++ Các loại Cascade type, Fetch type trong JPA
++ Tìm hiểu cách convert DTO -> Entity và ngược lại sử dụng 2 cách : dùng thư viện và sử dụng java reflection
+- Advance
++ Native query
++ Specification, Paging
++ Lấy dữ liệu khi JOIN nhiều bảng sử dụng JPA (mỗi bảng lấy 1 tới 2 trường thông tin)
+
+Trả lơi
+
+1. ORM là gì?
+ORM (Object-Relational Mapping) là một kỹ thuật lập trình cho phép làm việc với cơ sở dữ liệu bằng cách ánh xạ các đối tượng trong mã nguồn (thường là các lớp Java) với các bảng trong cơ sở dữ liệu. ORM giúp ẩn đi sự phức tạp của các truy vấn SQL và cho phép lập trình viên thao tác với dữ liệu theo cách hướng đối tượng.
+
+Lợi ích của ORM:
+Giảm bớt mã SQL: Giúp giảm thiểu việc viết các câu lệnh SQL phức tạp.
+Tăng tốc phát triển: Giúp lập trình viên tập trung vào logic ứng dụng thay vì các truy vấn SQL.
+Tính khả chuyển: Dễ dàng chuyển đổi giữa các hệ quản trị cơ sở dữ liệu khác nhau.
+Quản lý quan hệ: Dễ dàng quản lý các quan hệ giữa các bảng thông qua các annotations hoặc XML.
+Cơ chế hoạt động của ORM:
+Ánh xạ: Các lớp Java được ánh xạ với các bảng trong cơ sở dữ liệu.
+Tự động hóa: ORM tự động chuyển đổi các đối tượng thành câu lệnh SQL và ngược lại.
+Quản lý trạng thái: ORM theo dõi trạng thái của các đối tượng (mới, đã thay đổi, đã xóa) và quản lý việc lưu trữ chúng.
+So sánh performance của ORM vs JDBC:
+ORM:
+Ưu điểm: Tạo mã nhanh hơn, dễ đọc và bảo trì.
+Nhược điểm: Tốc độ có thể chậm hơn so với JDBC do việc ánh xạ và xử lý bổ sung.
+JDBC:
+Ưu điểm: Tối ưu về hiệu suất, kiểm soát chi tiết hơn.
+Nhược điểm: Mã dài hơn, phức tạp và khó bảo trì.
+2. Spring JPA
+Spring JPA là một triển khai của ORM, cung cấp một cách đơn giản để truy cập và quản lý cơ sở dữ liệu bằng cách sử dụng các repository. Nó là một phần của Spring Data, giúp đơn giản hóa việc tương tác với các cơ sở dữ liệu.
+
+3. Các loại quan hệ trong JPA
+Many To One: Một thực thể có thể liên kết với nhiều thực thể khác (ví dụ: Nhiều bài viết thuộc về một tác giả).
+One To Many: Một thực thể có thể có nhiều thực thể khác liên kết (ví dụ: Một tác giả có nhiều bài viết).
+Many To Many: Nhiều thực thể có thể liên kết với nhiều thực thể khác (ví dụ: Nhiều sinh viên có thể đăng ký nhiều khóa học).
+4. Cascade Type và Fetch Type trong JPA
+Cascade Type: Xác định hành động sẽ được thực hiện trên các thực thể liên kết khi thực thể chính thay đổi.
+
+CascadeType.ALL: Áp dụng tất cả các hành động (persist, merge, remove, refresh, detach).
+CascadeType.PERSIST: Chỉ áp dụng khi thực thể chính được lưu.
+CascadeType.REMOVE: Áp dụng khi thực thể chính bị xóa.
+Fetch Type: Xác định cách mà JPA sẽ tải dữ liệu liên kết.
+
+FetchType.LAZY: Tải dữ liệu khi cần.
+FetchType.EAGER: Tải ngay khi truy vấn thực thể chính.
+5. Convert DTO <-> Entity
+Sử dụng thư viện ( MapStruct, ModelMapper)
+
+Sử dụng Java Reflection
+
+6. Advance Concepts
+Native Query
+Cho phép sử dụng các câu lệnh SQL thuần túy trong JPA.
+
+Specification và Paging
+Specification: Cho phép bạn xây dựng các truy vấn động dựa trên các điều kiện.
+Paging: Cho phép phân trang dữ liệu trả về từ database
+Lấy dữ liệu khi JOIN nhiều bảng
+Bạn có thể sử dụng JPQL hoặc Criteria API để lấy dữ liệu từ nhiều bảng.
