@@ -1,0 +1,26 @@
+Thủ tục lưu (stored procedure) là một đoạn mã SQL đã được lưu trữ trong cơ sở dữ liệu, cho phép thực hiện các tác vụ phức tạp như truy vấn, cập nhật, xóa dữ liệu hoặc thực hiện các thao tác khác. Thủ tục lưu giúp tối ưu hóa hiệu suất của cơ sở dữ liệu và giảm thiểu việc gửi nhiều câu lệnh SQL từ ứng dụng đến cơ sở dữ liệu.
+
+Các đặc điểm chính:
+Tái sử dụng: Thủ tục lưu có thể được gọi nhiều lần từ các ứng dụng khác nhau mà không cần viết lại mã.
+Giảm bớt lưu lượng dữ liệu: Thay vì gửi nhiều câu lệnh riêng lẻ, bạn chỉ cần gọi một thủ tục.
+Bảo mật: Bạn có thể hạn chế quyền truy cập trực tiếp vào bảng và chỉ cho phép người dùng gọi thủ tục.
+Thủ tục lưu thường được sử dụng trong các ứng dụng cần xử lý dữ liệu phức tạp và giúp tăng hiệu suất cũng như bảo mật cho cơ sở dữ liệu.
+
+
+1. Định nghĩa Thủ tục
+Bắt đầu bằng câu lệnh CREATE PROCEDURE, theo sau là tên thủ tục và các tham số (nếu có).
+
+2. Các tham số
+Tham số đầu vào và đầu ra được định nghĩa, cho phép truyền dữ liệu vào thủ tục và nhận dữ liệu từ thủ tục.
+
+3. Khối lệnh
+Bên trong khối BEGIN...END, bạn sẽ viết các câu lệnh SQL cần thực hiện. Điều này có thể bao gồm:
+
+Câu lệnh SELECT: Để truy vấn dữ liệu.
+Câu lệnh INSERT: Để thêm dữ liệu mới.
+Câu lệnh UPDATE: Để cập nhật dữ liệu đã có.
+Câu lệnh DELETE: Để xóa dữ liệu.
+Các câu lệnh điều kiện: Như IF, CASE để thực hiện logic điều kiện.
+Vòng lặp: Như WHILE để lặp lại các câu lệnh.
+4. Kết thúc Thủ tục
+Kết thúc bằng từ khóa END.

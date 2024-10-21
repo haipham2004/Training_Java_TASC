@@ -1,0 +1,40 @@
+Phạm Ngọc Hải
+- Khi nào thì đánh partition trong 1 bảng
+- Đánh partition mang lại lợi ích gì cho truy vấn
+
+Trả lời: 
+
+Khi nào thì đánh Partition trong một bảng
+Kích thước bảng lớn:
+
+Khi bảng chứa hàng triệu hoặc hàng tỷ bản ghi, partitioning giúp quản lý và truy xuất dữ liệu hiệu quả hơn.
+Truy vấn thường xuyên theo tiêu chí cụ thể:
+
+Nếu nhiều truy vấn lọc hoặc nhóm theo một hoặc nhiều cột (như ngày tháng), việc partitioning theo các cột này có thể cải thiện hiệu suất.
+Dữ liệu có tính chu kỳ:
+
+Với các dữ liệu có chu kỳ như log hay transaction, partitioning theo thời gian (ngày, tháng, năm) giúp dễ dàng quản lý và bảo trì.
+Xóa dữ liệu cũ:
+
+Nếu thường xuyên cần xóa dữ liệu cũ, việc phân vùng cho phép xóa cả phân vùng mà không cần quét toàn bộ bảng.
+Yêu cầu bảo trì:
+
+Các tác vụ bảo trì (như backup, restore) có thể thực hiện nhanh hơn và hiệu quả hơn với các phân vùng.
+Lợi ích của việc đánh Partition cho truy vấn
+Tăng tốc độ truy vấn:
+
+Partitioning giúp hệ quản trị cơ sở dữ liệu chỉ cần quét các phân vùng liên quan thay vì toàn bộ bảng, từ đó cải thiện thời gian phản hồi cho truy vấn.
+Tối ưu hóa thao tác xóa và cập nhật:
+
+Việc xóa hoặc cập nhật dữ liệu trên các phân vùng cụ thể sẽ nhanh hơn, vì chỉ cần xử lý phần dữ liệu đó.
+Khả năng song song:
+
+Nhiều hệ quản trị cơ sở dữ liệu hỗ trợ thực hiện truy vấn song song trên các phân vùng, giúp tăng hiệu suất cho các truy vấn phức tạp.
+Quản lý dữ liệu hiệu quả:
+
+Partitioning cho phép bạn dễ dàng áp dụng các chính sách lưu trữ và bảo trì, như di chuyển các phân vùng cũ sang loại lưu trữ khác hoặc xóa chúng.
+Giảm độ phân mảnh:
+
+Dữ liệu được tổ chức thành các phân vùng giúp giảm thiểu độ phân mảnh, từ đó cải thiện hiệu suất đọc và ghi.
+
+Phần demo em có để ở git ạ

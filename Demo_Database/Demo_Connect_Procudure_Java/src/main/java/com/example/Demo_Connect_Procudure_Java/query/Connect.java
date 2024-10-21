@@ -1,4 +1,4 @@
-package com.example.Demo_Connect_Procudure_Java;
+package com.example.Demo_Connect_Procudure_Java.query;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;

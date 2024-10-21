@@ -1,0 +1,47 @@
+Phạm Ngọc Hải
+
+- Phân biệt cluester index và non-cluster index ? So sánh về perfomance khi sử dụng 2 loại index này ? Giải thích nguyên nhân
+- Có giới hạn việc đánh bao nhiêu index trong 1 table hay không ? Giải thích
+- Việc đánh index dựa trên cơ sở nào ?
+- Làm thế nào để biết 1 câu query đã sử dụng index hay chưa ?
+
+Trả lời:
+
+Phân biệt Cluster Index và Non-Cluster Index
+
+Cluster Index:
+
+Cấu trúc: Clustered index thường được sử dụng cho các cột có giá trị duy nhất và thường xuyên được truy cập.
+Thời gian truy cập: Tốc độ truy cập cao hơn cho các truy vấn mà sử dụng các điều kiện lọc dựa trên các cột trong cluster index do dữ liệu đã được sắp xếp.
+Ví dụ: Thường dùng cho cột khóa chính (Primary Key).
+
+Non-Cluster Index:
+
+Cấu trúc: Non-clustered index thường được sử dụng cho các cột không phải là khóa chính và thường xuyên được truy cập trong các truy vấn tìm kiếm, sắp xếp hoặc thống kê dữ liệu.
+Thời gian truy cập: Chậm hơn so với cluster index vì cần phải tìm kiếm trong non-cluster index và sau đó truy cập dữ liệu thực tế.
+Ví dụ: Thường dùng cho các cột khác không phải khóa chính nhưng cần tối ưu hóa truy vấn.
+
+
+So sánh về performance
+Cluster Index: Tốt cho truy vấn tìm kiếm theo thứ tự hoặc truy vấn cần truy cập nhiều bản ghi liên tiếp. Ví dụ: Các truy vấn như ORDER BY hoặc JOIN.
+Non-Cluster Index: Tốt cho các truy vấn tìm kiếm theo điều kiện cụ thể mà không cần thứ tự, nhưng có thể mất thêm thời gian để truy cập dữ liệu thực tế.
+
+Nguyên nhân: Cluster index cho phép truy cập dữ liệu nhanh hơn do dữ liệu được sắp xếp vật lý (sắp xếp theo thứ tự khoá chính), trong khi non-cluster index phải làm việc thêm để truy cập hàng thực tế.
+
+Giới hạn số lượng index trong 1 bảng
+Có giới hạn về số lượng index trong một bảng, thường khoảng 999 non-cluster indexes và 1 cluster index (tùy thuộc vào hệ quản trị cơ sở dữ liệu, như SQL Server hay MySQL).
+Giới hạn này là do:
+
+Hiệu suất: Quá nhiều index có thể làm giảm hiệu suất khi thực hiện các thao tác ghi (INSERT, UPDATE, DELETE) vì mỗi thay đổi phải cập nhật tất cả các index liên quan.
+Quản lý: Quá nhiều index cũng có thể làm cho việc quản lý và bảo trì trở nên phức tạp.
+
+Việc đánh index dựa trên cơ sở nào?
+Việc đánh index thường dựa trên:
+
+Tần suất truy vấn: Các cột thường xuyên được sử dụng trong các điều kiện WHERE, JOIN, hoặc ORDER BY.
+Loại truy vấn: Xác định các loại truy vấn phổ biến và lựa chọn các cột phù hợp để index.
+Chi phí cập nhật: Cân nhắc giữa lợi ích từ việc tối ưu hóa truy vấn và chi phí cập nhật cho các thao tác ghi.
+Cách kiểm tra câu query đã sử dụng index hay chưa
+Execution Plan:EXPLAIN  cho mySQL
+
+-- Phần demo em có để ở git ạ
