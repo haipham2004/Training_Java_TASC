@@ -1,0 +1,90 @@
+Phạm Ngọc Hải
+
+- Giới thiệu spring Framework: Spring MVC, Spring boot
+- Khái niệm DI, IoC
+- Spring bean, life cycle bean, bean scope. Các annotation sử dụng để khai báo bean trong Spring.
+- Khái niệm cơ bản về request, request, httpMethod, JSON, API
+- Demo : cài đặt môi trường và tạo 1 project spring boot sử dụng Inteliji (Chú ý một số dependency quan trọng)
+- Sơ lược về maven và các sử dụng
+- Hướng dẫn sử dụng postman : param, body request
+
+Trả lời: 
+1. Giới thiệu Spring Framework
+Spring MVC:
+
+Là một phần của Spring Framework, cung cấp cấu trúc để xây dựng các ứng dụng web theo mô hình MVC (Model-View-Controller).
+Cho phép quản lý các request và response, xử lý dữ liệu từ người dùng và hiển thị giao diện.
+
+Spring Boot:
+
+Là một dự án con của Spring, giúp phát triển ứng dụng nhanh chóng và dễ dàng hơn.
+Tự động cấu hình ứng dụng, cung cấp các starter dependencies để giảm thiểu cấu hình thủ công.
+
+2. Khái niệm DI và IoC
+
+Trong DI, các phụ thuộc của một đối tượng không được tạo bên trong đối tượng đó, mà được cung cấp từ bên ngoài.
+Các cách thực hiện Dependency Injection
++Constructor Injection: Dependency được tiêm vào thông qua constructor của lớp.
++Setter Injection: Dependency được tiêm vào thông qua các phương thức setter.
++Interface Injection: Các lớp cần dependency phải implement một giao diện có phương thức để tiêm dependency.
+
+IoC thường đi kèm với DI, nơi các dependency được quản lý và cung cấp bởi một framework hoặc container. Framework sẽ quản lý việc tạo và quản lý các đối tượng và phụ thuộc.
+
+3. Spring Bean, Life Cycle Bean và Bean Scope
+Spring Bean: Là một đối tượng được quản lý bởi Spring IoC container. Các bean có thể được định nghĩa và cấu hình thông qua XML hoặc các annotation.
+
+Life Cycle Bean: Quá trình mà Spring container khởi tạo, sử dụng và hủy bỏ bean. Bao gồm các giai đoạn như khởi tạo (initialization), sử dụng (usage), và hủy (destruction).
+
+Bean Scope:
+
+Singleton (mặc định): IoC container chỉ tạo đúng duy nhất 1 object từ class bean này
+Prototype: return một bean object riêng biệt cho mỗi lần sử dụng.
+Request: tạo mỗi bean cho mỗi request
+Session: tạo mỗi bean cho mỗi session
+Global session: tạo mỗi bean cho mỗi global session
+
+
+@Component: Đánh dấu một lớp là bean.
+@Service: Được sử dụng cho các lớp service.
+@Repository: Được sử dụng cho các lớp DAO.
+@Controller: Được sử dụng cho các lớp controller trong Spring MVC.
+
+4. Khái niệm cơ bản về Request và JSON
+
+Request: Là thông tin mà client gửi đến server, có thể là dữ liệu từ form, URL parameters, hoặc body.
+Response: Là thông tin mà server gửi lại cho client.
+
+HTTP Methods: Các phương thức như GET, POST, PUT, DELETE dùng để xác định hành động trên tài nguyên.
+JSON: Định dạng dữ liệu nhẹ, dễ đọc và ghi, thường được sử dụng để truyền dữ liệu giữa client và server.
+API: Giao diện lập trình ứng dụng, cho phép các phần mềm giao tiếp với nhau.
+
+5. Demo: Cài đặt môi trường và tạo project Spring Boot
+Bước 1: Cài đặt IntelliJ IDEA
+Tải và cài đặt IntelliJ IDEA từ trang chính thức.
+Bước 2: Tạo Project mới
+Mở IntelliJ IDEA, chọn "New Project".
+Chọn "Spring Initializr" và nhấn "Next".
+Cấu hình các thông tin như Group, Artifact, và chọn các dependencies cần thiết (ví dụ: Spring Web, Spring Data JPA, Spring Boot DevTools).
+Bước 3: Các dependency quan trọng
+Spring Web: Để xây dựng ứng dụng web.
+Spring Data JPA: Để tương tác với cơ sở dữ liệu.
+H2 Database: Cơ sở dữ liệu nhúng cho phát triển nhanh.
+Bước 4: Tạo Controller
+
+--Demo git ạ
+
+6. Sơ lược về Maven
+Maven: Là công cụ quản lý dự án và tự động hóa xây dựng, giúp quản lý dependencies, biên dịch và package ứng dụng.
+pom.xml: Tệp cấu hình nơi bạn định nghĩa dependencies và thông tin dự án.
+
+7. Hướng dẫn sử dụng Postman
+Gửi request bằng Postman
+Params: Thêm các tham số vào URL.
+Body: Chọn loại request (ví dụ: JSON), sau đó nhập dữ liệu bạn muốn gửi.
+
+Ví dụ về request POST:
+
+Chọn phương thức POST.
+Nhập URL: http://localhost:8080/api/hello.
+Chọn tab "Body", chọn "raw", và định dạng là JSON.
+Nhập dữ liệu JSON (nếu cần) và nhấn "Send".

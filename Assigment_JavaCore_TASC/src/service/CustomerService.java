@@ -7,17 +7,17 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CustomerService {
 
-    private List<Customer> customers;
+    private Map<String, Customer> customers; 
 
     private static final String FILE_NAME = "customers.txt";
 
     public CustomerService() {
-        customers = new ArrayList<>();
+        customers = new HashMap<>();
         loadCustomers();
     }
 
@@ -27,14 +27,12 @@ public class CustomerService {
             return;
         }
 
-        for (Customer c : customers) {
-            if (c.getPhoneNumber().equals(customer.getPhoneNumber())) {
-                System.out.println("Số điện thoại này đã tồn tại. Vui lòng nhập số điện thoại khác.");
-                return;
-            }
+        if (customers.containsKey(customer.getPhoneNumber())) {
+            System.out.println("Số điện thoại này đã tồn tại. Vui lòng nhập số điện thoại khác.");
+            return;
         }
 
-        customers.add(customer);
+        customers.put(customer.getPhoneNumber(), customer);
         saveCustomers();
     }
 
@@ -44,18 +42,13 @@ public class CustomerService {
             return;
         }
 
-        for (Customer customer : customers) {
+        for (Customer customer : customers.values()) {
             System.out.println(customer);
         }
     }
 
     public Customer searchCustomerByPhoneNumber(String phoneNumber) {
-        for (Customer customer : customers) {
-            if (customer.getPhoneNumber().equals(phoneNumber)) {
-                return customer;
-            }
-        }
-        return null;
+        return customers.get(phoneNumber);
     }
 
     public void editCustomer(String phoneNumber, String newName, String newEmail, String newPhoneNumber) {
@@ -76,24 +69,27 @@ public class CustomerService {
         }
 
         if (newPhoneNumber != null && !newPhoneNumber.isEmpty() && newPhoneNumber.matches("^[0-9]{10}$")) {
+
+            customers.remove(phoneNumber);
             customer.setPhoneNumber(newPhoneNumber);
+            customers.put(newPhoneNumber, customer);
         } else if (newPhoneNumber != null && !newPhoneNumber.isEmpty()) {
             System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 số.");
         }
 
         saveCustomers();
+        viewCustomers();
     }
 
-
     public void deleteCustomer(String phoneNumber) {
-        Customer customer = searchCustomerByPhoneNumber(phoneNumber);
-        if (customer == null) {
+        if (!customers.containsKey(phoneNumber)) {
             System.out.println("Không tìm thấy khách hàng với số điện thoại này.");
             return;
         }
-
-        customers.remove(customer);
+        System.out.println("Đã xoá thành công khách hàng có số điện thoại: "+phoneNumber);
+        customers.remove(phoneNumber);
         saveCustomers();
+        viewCustomers();
     }
 
     private boolean isValidCustomer(Customer customer) {
@@ -124,7 +120,8 @@ public class CustomerService {
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length == 3) {
-                    customers.add(new Customer(parts[0], parts[1], parts[2]));
+                    Customer customer = new Customer(parts[0], parts[1], parts[2]);
+                    customers.put(customer.getPhoneNumber(), customer);
                 }
             }
         } catch (IOException e) {
@@ -134,7 +131,7 @@ public class CustomerService {
 
     private void saveCustomers() {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
-            for (Customer customer : customers) {
+            for (Customer customer : customers.values()) {
                 writer.println(customer.getName() + "," + customer.getEmail() + "," + customer.getPhoneNumber());
             }
         } catch (IOException e) {

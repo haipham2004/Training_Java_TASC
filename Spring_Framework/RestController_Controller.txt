@@ -1,0 +1,52 @@
+Phạm Ngọc Hải 
+
+- Tìm hiểu sự khác nhau giữa RestController vs Controller, trường hợp sử dụng
+- Routing
+- Tìm hiểu cách mà controller nhận input đầu vào là : params, body, path variable, header....
+- Thực hành viết các api với các method + các loại input đầu vào với data static
+- Validate input controller
+- hanlde exception
+
+Trả lời: 
+
+1. Sự khác nhau giữa @RestController và @Controller
+
+@Controller:
+
+Được sử dụng để định nghĩa một controller trong Spring MVC, có thể trả về các view (HTML) hoặc dữ liệu.
+Thường dùng trong các ứng dụng web truyền thống.
+Phải sử dụng @ResponseBody để trả về dữ liệu dạng JSON hoặc XML.
+
+@RestController:
+
+Là một biến thể của @Controller, tự động thêm @ResponseBody cho tất cả các phương thức.
+Thường dùng trong các ứng dụng RESTful API, nơi trả về dữ liệu (JSON, XML) thay vì view.
+Giúp mã nguồn gọn gàng hơn vì không cần phải thêm @ResponseBody cho mỗi phương thức.
+
+2. Routing
+Routing trong Spring MVC là quá trình ánh xạ các request từ client đến các phương thức trong controller. Bạn có thể sử dụng các annotation như:
+
+@GetMapping: Để ánh xạ các request GET.
+@PostMapping: Để ánh xạ các request POST.
+@PutMapping: Để ánh xạ các request PUT.
+@DeleteMapping: Để ánh xạ các request DELETE.
+
+3. Nhận input đầu vào
+Controller có thể nhận các loại input đầu vào từ request:
+
+Params: Tham số trong URL. Sử dụng @RequestParam để lấy giá trị.
+Body: Dữ liệu gửi trong thân request. Sử dụng @RequestBody để lấy dữ liệu JSON.
+Path Variable: Tham số trong đường dẫn URL. Sử dụng @PathVariable để lấy giá trị.
+Header: Thông tin trong header của request. Sử dụng @RequestHeader để lấy giá trị.
+
+4. Thực hành viết API với các method và input đầu vào
+
+Em demo trên git ạ
+
+5: Validate input controller
+Sử dụng các annotation từ thư viện javax.validation để xác thực input.
+Thêm @Valid vào tham số trong phương thức controller.
+6.  Handle Exception
+Spring cung cấp cơ chế để xử lý ngoại lệ bằng cách sử dụng @ControllerAdvice và @ExceptionHandler.
+
+--> Phần demo em để ở git ạ
