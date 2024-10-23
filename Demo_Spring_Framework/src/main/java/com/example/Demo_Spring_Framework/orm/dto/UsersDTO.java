@@ -1,6 +1,7 @@
-package com.example.Demo_Spring_Framework.Introduction;
+package com.example.Demo_Spring_Framework.orm.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,14 +11,12 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @ToString
-public class SanPham {
+public class UsersDTO {
 
-    private String maSanPham;
+    private Integer id;
 
-    private String tenSanPham;
+    private String name;
 
-    private int soLuong;
-
-    private Double gia;
 }
