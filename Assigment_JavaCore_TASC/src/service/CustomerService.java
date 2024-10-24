@@ -3,12 +3,17 @@ package service;
 import model.Customer;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class CustomerService {
 
@@ -22,19 +27,14 @@ public class CustomerService {
     }
 
     public void addCustomer(Customer customer) {
-        if (!isValidCustomer(customer)) {
-            System.out.println("Thông tin khách hàng không hợp lệ. Vui lòng kiểm tra lại.");
-            return;
-        }
-
-        if (customers.containsKey(customer.getPhoneNumber())) {
-            System.out.println("Số điện thoại này đã tồn tại. Vui lòng nhập số điện thoại khác.");
-            return;
+        if (checkPhoneNumberExists(customer.getPhoneNumber())) {
+            return; // Không thêm khách hàng nếu số điện thoại đã tồn tại
         }
 
         customers.put(customer.getPhoneNumber(), customer);
-        saveCustomers();
+        saveCustomers(); // Lưu danh sách khách hàng
     }
+
 
     public void viewCustomers() {
         if (customers.isEmpty()) {
@@ -53,33 +53,24 @@ public class CustomerService {
 
     public void editCustomer(String phoneNumber, String newName, String newEmail, String newPhoneNumber) {
         Customer customer = searchCustomerByPhoneNumber(phoneNumber);
+
         if (customer == null) {
             System.out.println("Không tìm thấy khách hàng với số điện thoại này.");
             return;
         }
 
-        if (newName != null && !newName.isEmpty()) {
-            customer.setName(newName);
-        }
+        customer.setName(newName);
+        customer.setEmail(newEmail);
 
-        if (newEmail != null && !newEmail.isEmpty() && newEmail.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-            customer.setEmail(newEmail);
-        } else if (newEmail != null && !newEmail.isEmpty()) {
-            System.out.println("Email không hợp lệ. Vui lòng nhập email đúng định dạng.");
-        }
-
-        if (newPhoneNumber != null && !newPhoneNumber.isEmpty() && newPhoneNumber.matches("^[0-9]{10}$")) {
-
-            customers.remove(phoneNumber);
-            customer.setPhoneNumber(newPhoneNumber);
-            customers.put(newPhoneNumber, customer);
-        } else if (newPhoneNumber != null && !newPhoneNumber.isEmpty()) {
-            System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 số.");
-        }
+        customers.remove(phoneNumber);
+        customer.setPhoneNumber(newPhoneNumber);
+        customers.put(newPhoneNumber, customer);
 
         saveCustomers();
         viewCustomers();
     }
+
+
 
     public void deleteCustomer(String phoneNumber) {
         if (!customers.containsKey(phoneNumber)) {
@@ -92,50 +83,95 @@ public class CustomerService {
         viewCustomers();
     }
 
-    private boolean isValidCustomer(Customer customer) {
-        boolean isValid = true;
-        if (customer.getName() == null || customer.getName().isEmpty()) {
-            System.out.println("Tên không được để trống.");
-            isValid = false;
+    public boolean checkPhoneNumberExists(String phoneNumber) {
+        if (customers.containsKey(phoneNumber)) {
+            System.out.println("Số điện thoại này đã tồn tại. Vui lòng nhập số điện thoại khác.");
+            return true; // Số điện thoại đã tồn tại
         }
-
-        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-        if (customer.getEmail() == null || !customer.getEmail().matches(emailRegex)) {
-            System.out.println("Email không hợp lệ. Vui lòng nhập email đúng định dạng.");
-            isValid = false;
-        }
-
-        String phoneRegex = "^[0-9]{10}$";
-        if (customer.getPhoneNumber() == null || !customer.getPhoneNumber().matches(phoneRegex)) {
-            System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 số.");
-            isValid = false;
-        }
-
-        return isValid;
+        return false; // Số điện thoại chưa tồn tại
     }
 
+
+//    private void loadCustomers() {
+//        try (FileInputStream fis = new FileInputStream(FILE_NAME);
+//             InputStreamReader isr = new InputStreamReader(fis);
+//             BufferedReader reader = new BufferedReader(isr)) {
+//
+//            String line;
+//            while ((line = reader.readLine()) != null) {
+//                String[] parts = line.split(",");
+//                if (parts.length == 3) {
+//
+//                    if (!customers.containsKey(parts[2])) {
+//                        Customer customer = new Customer(parts[0], parts[1], parts[2]);
+//                        customers.put(customer.getPhoneNumber(), customer);
+//                    }
+//                }
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Không thể tải dữ liệu khách hàng: " + e.getMessage());
+//        }
+//    }
+
     private void loadCustomers() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+        long startTime = System.currentTimeMillis();
+
+        try (FileInputStream fis = new FileInputStream(FILE_NAME);
+             InputStreamReader isr = new InputStreamReader(fis);
+             BufferedReader reader = new BufferedReader(isr)) {
+
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length == 3) {
-                    Customer customer = new Customer(parts[0], parts[1], parts[2]);
-                    customers.put(customer.getPhoneNumber(), customer);
+                    if (!customers.containsKey(parts[2])) {
+                        Customer customer = new Customer(parts[0], parts[1], parts[2]);
+                        customers.put(customer.getPhoneNumber(), customer);
+                    }
                 }
             }
         } catch (IOException e) {
             System.out.println("Không thể tải dữ liệu khách hàng: " + e.getMessage());
+        } finally {
+            long endTime = System.currentTimeMillis();
+            long duration = endTime - startTime;
+            System.out.println("Thời gian đọc file: " + duration + " ms");
         }
     }
 
+
+
     private void saveCustomers() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
+        Set<String> existingPhoneNumbers = new HashSet<>();
+
+   
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length >= 3) {
+                    existingPhoneNumbers.add(parts[2]);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Không thể đọc dữ liệu khách hàng: " + e.getMessage());
+        }
+
+
+        try (FileOutputStream fos = new FileOutputStream(FILE_NAME, true);
+             OutputStreamWriter osw = new OutputStreamWriter(fos);
+             PrintWriter writer = new PrintWriter(osw)) {
+
             for (Customer customer : customers.values()) {
-                writer.println(customer.getName() + "," + customer.getEmail() + "," + customer.getPhoneNumber());
+
+                if (!existingPhoneNumbers.contains(customer.getPhoneNumber())) {
+                    writer.println(customer.getName() + "," + customer.getEmail() + "," + customer.getPhoneNumber());
+                }
             }
         } catch (IOException e) {
             System.out.println("Không thể lưu dữ liệu khách hàng: " + e.getMessage());
         }
     }
+
+
 }
