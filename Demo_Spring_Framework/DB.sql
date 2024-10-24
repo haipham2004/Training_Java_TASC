@@ -3,14 +3,14 @@ CREATE DATABASE demo_orm;
 USE demo_orm;  
 
 CREATE TABLE users (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id int AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
 );
 CREATE TABLE posts (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id int AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    user_id BIGINT,
+    user_id int,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 

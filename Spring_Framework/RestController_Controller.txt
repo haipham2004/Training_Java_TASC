@@ -12,14 +12,12 @@ Trả lời:
 1. Sự khác nhau giữa @RestController và @Controller
 
 @Controller:
-
 Được sử dụng để định nghĩa một controller trong Spring MVC, có thể trả về các view (HTML) hoặc dữ liệu.
-Thường dùng trong các ứng dụng web truyền thống.
 Phải sử dụng @ResponseBody để trả về dữ liệu dạng JSON hoặc XML.
 
 @RestController:
 
-Là một biến thể của @Controller, tự động thêm @ResponseBody cho tất cả các phương thức.
+Là tập tợp của @Controller và @ResponseBody cho tất cả các phương thức.
 Thường dùng trong các ứng dụng RESTful API, nơi trả về dữ liệu (JSON, XML) thay vì view.
 Giúp mã nguồn gọn gàng hơn vì không cần phải thêm @ResponseBody cho mỗi phương thức.
 
