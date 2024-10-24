@@ -26,5 +26,20 @@ public class MultiThreadA implements Runnable{
 
         thread1.start();
         thread2.start();
+
+
+        try {
+            // Chờ cho đến khi cả hai thread chạy xong
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Kiểm tra trạng thái thread
+        if (!thread1.isAlive() && !thread2.isAlive()) {
+            System.out.println("Tất cả các thread đã hoàn thành");
+        }
+
     }
 }

@@ -16,9 +16,9 @@ Là một phần của Spring Framework, cung cấp cấu trúc để xây dựn
 Cho phép quản lý các request và response, xử lý dữ liệu từ người dùng và hiển thị giao diện.
 
 Spring Boot:
+Spring Boot là một framework trong hệ sinh thái Spring, giúp phát triển ứng dụng Java dễ dàng hơn bằng cách cung cấp cấu hình tự động và các tính năng sẵn có.
+Nó cho phép tạo ứng dụng độc lập, có thể chạy ngay mà không cần cấu hình phức tạp. Spring Boot hỗ trợ tích hợp với nhiều thư viện và công nghệ khác nhau, giúp tăng tốc quá trình phát triển
 
-Là một dự án con của Spring, giúp phát triển ứng dụng nhanh chóng và dễ dàng hơn.
-Tự động cấu hình ứng dụng, cung cấp các starter dependencies để giảm thiểu cấu hình thủ công.
 
 2. Khái niệm DI và IoC
 
@@ -28,27 +28,33 @@ Các cách thực hiện Dependency Injection
 +Setter Injection: Dependency được tiêm vào thông qua các phương thức setter.
 +Interface Injection: Các lớp cần dependency phải implement một giao diện có phương thức để tiêm dependency.
 
-IoC thường đi kèm với DI, nơi các dependency được quản lý và cung cấp bởi một framework hoặc container. Framework sẽ quản lý việc tạo và quản lý các đối tượng và phụ thuộc.
-
+ Spring Container (IoC Container)
+Khái niệm: Spring Container (IoC Container) chịu trách nhiệm tạo ra các đối tượng (beans), lắp ráp chúng lại với nhau, cấu hình các thuộc tính của chúng và quản lý vòng đời của chúng. Điều này bao gồm việc khởi tạo, sử dụng và cuối cùng là hủy bỏ các đối tượng.
+Quản lý vòng đời: Spring Container không chỉ tạo ra đối tượng mà còn điều phối các giai đoạn khởi tạo và hủy bỏ của chúng, cho phép bạn chạy mã tùy chỉnh thông qua các annotation như @PostConstruct và @PreDestroy.
+--> IoC tạo ra đối tượng: Container chịu trách nhiệm khởi tạo các đối tượng khi cần thiết, thay vì mã nguồn tự tạo ra chúng.
+Tiêm phụ thuộc: Các phụ thuộc được cung cấp cho đối tượng thông qua Dependency Injection (DI). Điều này có thể thực hiện qua constructor, setter, hoặc annotation.
 3. Spring Bean, Life Cycle Bean và Bean Scope
 Spring Bean: Là một đối tượng được quản lý bởi Spring IoC container. Các bean có thể được định nghĩa và cấu hình thông qua XML hoặc các annotation.
 
 Life Cycle Bean: Quá trình mà Spring container khởi tạo, sử dụng và hủy bỏ bean. Bao gồm các giai đoạn như khởi tạo (initialization), sử dụng (usage), và hủy (destruction).
+Scope của bean xác định thời điểm và cách thức bean được tạo ra. Các loại scope phổ biến trong Spring bao gồm:
 
-Bean Scope:
+Singleton: (Mặc định) Chỉ có một thể hiện duy nhất của bean cho toàn bộ Spring Container. Bean này sẽ được khởi tạo khi lần đầu tiên được yêu cầu và sẽ tồn tại cho đến khi Container bị tắt.
 
-Singleton (mặc định): IoC container chỉ tạo đúng duy nhất 1 object từ class bean này
-Prototype: return một bean object riêng biệt cho mỗi lần sử dụng.
-Request: tạo mỗi bean cho mỗi request
-Session: tạo mỗi bean cho mỗi session
-Global session: tạo mỗi bean cho mỗi global session
+Prototype: Mỗi lần yêu cầu bean, Spring sẽ tạo ra một thể hiện mới. Bean này không được quản lý vòng đời bởi Spring Container.
+
+Request: Một thể hiện bean sẽ được tạo ra cho mỗi yêu cầu HTTP. Chỉ áp dụng trong ứng dụng web.
+
+Session: Một thể hiện bean sẽ được tạo ra cho mỗi phiên làm việc của người dùng. Chỉ áp dụng trong ứng dụng web.
+
+Global Session: Chỉ áp dụng cho các ứng dụng portlet, một thể hiện bean cho mỗi phiên làm việc toàn cục.
 
 
 @Component: Đánh dấu một lớp là bean.
 @Service: Được sử dụng cho các lớp service.
 @Repository: Được sử dụng cho các lớp DAO.
 @Controller: Được sử dụng cho các lớp controller trong Spring MVC.
-
+@Configuration : Ghi đè cài đặt cấu hình đi kèm với @Bean.
 4. Khái niệm cơ bản về Request và JSON
 
 Request: Là thông tin mà client gửi đến server, có thể là dữ liệu từ form, URL parameters, hoặc body.
@@ -68,23 +74,21 @@ Cấu hình các thông tin như Group, Artifact, và chọn các dependencies c
 Bước 3: Các dependency quan trọng
 Spring Web: Để xây dựng ứng dụng web.
 Spring Data JPA: Để tương tác với cơ sở dữ liệu.
-H2 Database: Cơ sở dữ liệu nhúng cho phát triển nhanh.
-Bước 4: Tạo Controller
-
---Demo git ạ
-
+Mysql Database: Cơ sở dữ liệu .
+Bước 4: Tạo Controller or Restcontroller
 6. Sơ lược về Maven
 Maven: Là công cụ quản lý dự án và tự động hóa xây dựng, giúp quản lý dependencies, biên dịch và package ứng dụng.
 pom.xml: Tệp cấu hình nơi bạn định nghĩa dependencies và thông tin dự án.
 
 7. Hướng dẫn sử dụng Postman
+
 Gửi request bằng Postman
 Params: Thêm các tham số vào URL.
-Body: Chọn loại request (ví dụ: JSON), sau đó nhập dữ liệu bạn muốn gửi.
+Body: Chọn loại request (ví dụ: JSON), sau đó nhập dữ liệu muốn gửi.
 
 Ví dụ về request POST:
 
 Chọn phương thức POST.
-Nhập URL: http://localhost:8080/api/hello.
+Nhập URL: http://localhost:8080/api/hien-thi
 Chọn tab "Body", chọn "raw", và định dạng là JSON.
 Nhập dữ liệu JSON (nếu cần) và nhấn "Send".

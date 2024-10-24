@@ -17,7 +17,7 @@ ORM (Object-Relational Mapping) là một kỹ thuật lập trình cho phép l�
 
 Lợi ích của ORM:
 Giảm bớt mã SQL: Giúp giảm thiểu việc viết các câu lệnh SQL phức tạp.
-Tăng tốc phát triển: Giúp lập trình viên tập trung vào logic ứng dụng thay vì các truy vấn SQL.
+Tăng tốc phát triển: Giúp tập trung vào logic ứng dụng thay vì các truy vấn SQL.
 Tính khả chuyển: Dễ dàng chuyển đổi giữa các hệ quản trị cơ sở dữ liệu khác nhau.
 Quản lý quan hệ: Dễ dàng quản lý các quan hệ giữa các bảng thông qua các annotations hoặc XML.
 Cơ chế hoạt động của ORM:
@@ -61,4 +61,4 @@ Specification và Paging
 Specification: Cho phép bạn xây dựng các truy vấn động dựa trên các điều kiện.
 Paging: Cho phép phân trang dữ liệu trả về từ database
 Lấy dữ liệu khi JOIN nhiều bảng
-Bạn có thể sử dụng JPQL hoặc Criteria API để lấy dữ liệu từ nhiều bảng.
+Có thể sử dụng JPQL hoặc Criteria API để lấy dữ liệu từ nhiều bảng.
