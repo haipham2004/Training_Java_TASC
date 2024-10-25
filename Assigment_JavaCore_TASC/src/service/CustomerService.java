@@ -28,11 +28,11 @@ public class CustomerService {
 
     public void addCustomer(Customer customer) {
         if (checkPhoneNumberExists(customer.getPhoneNumber())) {
-            return; // Không thêm khách hàng nếu số điện thoại đã tồn tại
+            return;
         }
 
         customers.put(customer.getPhoneNumber(), customer);
-        saveCustomers(); // Lưu danh sách khách hàng
+        saveCustomers();
     }
 
 
@@ -42,8 +42,16 @@ public class CustomerService {
             return;
         }
 
+
+        System.out.printf("%-15s %-25s %-15s%n", "Name", "Email", "Phone");
+        System.out.println("--------------------------------------------------------");
+
+
         for (Customer customer : customers.values()) {
-            System.out.println(customer);
+            System.out.printf("%-15s %-25s %-15s%n",
+                    customer.getName(),
+                    customer.getEmail(),
+                    customer.getPhoneNumber());
         }
     }
 
@@ -86,9 +94,9 @@ public class CustomerService {
     public boolean checkPhoneNumberExists(String phoneNumber) {
         if (customers.containsKey(phoneNumber)) {
             System.out.println("Số điện thoại này đã tồn tại. Vui lòng nhập số điện thoại khác.");
-            return true; // Số điện thoại đã tồn tại
+            return true;
         }
-        return false; // Số điện thoại chưa tồn tại
+        return false;
     }
 
 
@@ -144,7 +152,7 @@ public class CustomerService {
     private void saveCustomers() {
         Set<String> existingPhoneNumbers = new HashSet<>();
 
-   
+
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
             while ((line = reader.readLine()) != null) {
