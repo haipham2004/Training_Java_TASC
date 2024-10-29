@@ -1,0 +1,44 @@
+Chủ đề: Dự án bán sách
+
+-- Chức năng dự kiến
+
+1. Quản lý Người Dùng
+Đăng ký người dùng mới: Cho phép người dùng tạo tài khoản mới.
+Đăng nhập: Xác thực thông tin đăng nhập và cấp token xác thực.
+Quản lý tài khoản: Cập nhật thông tin cá nhân (username, email, mật khẩu).
+
+2. Quản lý Vai Trò
+Thêm, sửa, xóa vai trò: Quản lý các vai trò (USER, ADMIN, EDITOR).
+Gán vai trò cho người dùng: Gán vai trò cụ thể cho người dùng.
+
+3. Quản lý Sách
+Thêm sách mới: Cho phép admin thêm sách mới vào danh sách.
+Cập nhật thông tin sách: Thay đổi thông tin sách (tiêu đề, tác giả, nhà xuất bản, giá cả, mô tả).
+Xóa sách: Đánh dấu sách là đã xóa(xoá mềm)
+Tìm kiếm và lọc sách: Cho phép người dùng tìm kiếm sách theo tiêu đề, tác giả, thể loại.
+
+4. Quản lý Tác Giả và Nhà Xuất Bản
+Thêm, sửa, xóa thông tin tác giả: Quản lý thông tin về tác giả sách.
+Thêm, sửa, xóa thông tin nhà xuất bản: Quản lý thông tin về nhà xuất bản sách.
+
+5. Quản lý Đơn Hàng
+Tạo đơn hàng: Từ giỏ hàng, người dùng có thể tạo đơn hàng mới.
+Xem danh sách đơn hàng: Người dùng có thể xem tất cả các đơn hàng đã đặt.
+Xem chi tiết đơn hàng: Hiển thị thông tin chi tiết của từng đơn hàng.
+
+6. Giỏ Hàng
+Thêm sách vào giỏ hàng: Người dùng có thể thêm sách vào giỏ hàng.
+Cập nhật số lượng sách trong giỏ hàng: Cho phép người dùng thay đổi số lượng sách.
+Xóa sách khỏi giỏ hàng: Người dùng có thể xóa sách không cần thiết ra khỏi giỏ hàng.
+Xem nội dung giỏ hàng: Hiển thị danh sách sách trong giỏ hàng.
+
+7. Thanh Toán (VnPay)
+Thực hiện thanh toán: Xử lý thanh toán cho các đơn hàng.
+Lưu trữ lịch sử giao dịch: Ghi lại thông tin các giao dịch thanh toán.
+
+8. Quản lý Danh Mục Sách 
+Thêm, sửa, xóa danh mục sách: Quản lý các danh mục cho sách.
+Gán sách vào các danh mục: Kết nối sách với các danh mục tương ứng.
+
+9. Lịch Sử Giao Dịch
+Xem lịch sử giao dịch: Người dùng có thể xem lại các giao dịch đã thực hiện.
